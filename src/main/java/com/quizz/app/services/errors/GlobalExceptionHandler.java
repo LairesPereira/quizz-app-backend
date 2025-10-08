@@ -1,6 +1,8 @@
 package com.quizz.app.services.errors;
 
 import com.quizz.app.errors.AlreadyExistsException;
+import com.quizz.app.errors.ForbiddenException;
+import com.quizz.app.errors.ResourceNotFound;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -36,6 +38,20 @@ public class GlobalExceptionHandler {
         Map<String, String> response = new HashMap<>();
         response.put("error", ex.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+    }
+
+    @ExceptionHandler(ForbiddenException.class)
+    public  ResponseEntity<Map<String, String>> handleForbiddenException(ForbiddenException ex) {
+        Map<String, String> response = new HashMap<>();
+        response.put("error", ex.getMessage());
+        return  ResponseEntity.status(HttpStatus.FORBIDDEN).body(response);
+    }
+
+    @ExceptionHandler(ResourceNotFound.class)
+    public  ResponseEntity<Map<String, String>> handleResourceNotFound(ResourceNotFound ex) {
+        Map<String, String> response = new HashMap<>();
+        response.put("error", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
     }
 
     @ExceptionHandler(AlreadyExistsException.class)

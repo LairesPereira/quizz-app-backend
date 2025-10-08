@@ -1,6 +1,8 @@
 package com.quizz.app.services;
 
 import com.quizz.app.dto.CreateQuizzDTO;
+import com.quizz.app.errors.ForbiddenException;
+import com.quizz.app.errors.ResourceNotFound;
 import com.quizz.app.models.Answer;
 import com.quizz.app.models.Question;
 import com.quizz.app.models.Quizz;
@@ -89,6 +91,20 @@ public class QuizzServices {
         if (correct != 1) {
             throw new IllegalArgumentException("Only one answer can be correct");
         }
+    }
+
+    public boolean toggleStatus(String slug) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Quizz quizz = quizzRepository.findBySlug(slug);
+        if (quizz == null) {
+            throw new ResourceNotFound("Quizz not found");
+        }
+        if (!quizz.getUser().getId().equals(user.getId())) {
+            throw new ForbiddenException("You are not allowed to toggle this status");
+        }
+        quizz.setStatus(!quizz.isStatus());
+        quizzRepository.save(quizz);
+        return true;
     }
 
 //    public boolean checkIfAnswersAreValid(List<Answer> answers) {
