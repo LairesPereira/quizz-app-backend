@@ -5,12 +5,18 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
 @Table(name = "quizz")
 public class Quizz {
@@ -21,8 +27,7 @@ public class Quizz {
     @NotBlank
     private String title;
 
-    @NotBlank
-    private String content;
+    private String description;
 
     @NotNull
     private boolean status;
@@ -30,21 +35,22 @@ public class Quizz {
     @NotNull
     private double maxScore;
 
+    @NotBlank
+    @Column(unique = true)
+    private String slug;
+
     @NotNull
     private LocalDateTime createdAt;
 
     @NotNull
     private LocalDateTime updatedAt;
 
-    @NotNull
-    @Enumerated(EnumType.STRING)
-
     @ManyToOne
     @JoinColumn(name = "user_id")
     @JsonBackReference
     private User user;
 
-    @OneToMany(mappedBy = "answer", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "quizz", cascade = CascadeType.ALL, fetch =  FetchType.EAGER)
     @JsonManagedReference
-    private List<Answer> answers;
+    private List<Question> questions;
 }

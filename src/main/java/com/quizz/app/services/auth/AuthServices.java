@@ -2,6 +2,7 @@ package com.quizz.app.services.auth;
 
 import com.quizz.app.dto.UserRegisterDTO;
 import com.quizz.app.enums.Roles;
+import com.quizz.app.errors.AlreadyExistsException;
 import com.quizz.app.repositorie.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -25,9 +26,8 @@ public class AuthServices {
 
     public User save(UserRegisterDTO user) {
         if (userRepository.findByEmail(user.getEmail()) != null) {
-            return null;
+            throw new AlreadyExistsException("Email já cadastrado!");
         }
-
 
         User userEntity = User.builder()
                 .firstName(user.getFirstName())

@@ -44,10 +44,4 @@ public class AuthControllers {
         var token = tokenService.generateToken((User) auth.getPrincipal());
         return ResponseEntity.ok(new LoginResponseDTO(token));
     }
-
-    @GetMapping("/list")
-    public ResponseEntity<?> getAllUsers() {
-        List<User> users = authServices.findAll();
-        return ResponseEntity.ok(Map.of("users", users));
-    }
 }

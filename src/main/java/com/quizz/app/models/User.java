@@ -39,14 +39,14 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Roles role;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch =  FetchType.EAGER)
     @JsonManagedReference
     private List<Quizz> quizzList;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if (this.role == Roles.ADM) return List.of(new SimpleGrantedAuthority("ADMIN"));
-        return List.of(new SimpleGrantedAuthority("TEACHER"));
+        if (this.role == Roles.ADM) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"));
+        return List.of(new SimpleGrantedAuthority("ROLE_TEACHER"));
     }
 
     @Override
