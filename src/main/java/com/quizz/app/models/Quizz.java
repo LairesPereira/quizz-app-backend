@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -25,8 +28,10 @@ public class Quizz {
     private String id;
 
     @NotBlank
+    @Size(max = 100000)
     private String title;
 
+    @Size(max = 100000)
     private String description;
 
     @NotNull
@@ -50,7 +55,16 @@ public class Quizz {
     @JsonBackReference
     private User user;
 
-    @OneToMany(mappedBy = "quizz", cascade = CascadeType.ALL, fetch =  FetchType.EAGER)
+    @OneToMany(mappedBy = "quizz", cascade = {CascadeType.MERGE, CascadeType.ALL, CascadeType.REMOVE}, fetch = FetchType.EAGER, orphanRemoval = true)
     @JsonManagedReference
     private List<Question> questions;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "participant_quizz",
+            joinColumns = @JoinColumn(name = "quizz_id"),
+            inverseJoinColumns = @JoinColumn(name = "participant_id")
+    )
+    @JsonManagedReference
+    private List<Participant> participants;
 }

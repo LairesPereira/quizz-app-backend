@@ -1,4 +1,4 @@
-package com.quizz.app.models;
+package com.quizz.app.dto;
 
 import lombok.Data;
 

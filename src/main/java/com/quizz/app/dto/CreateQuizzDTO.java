@@ -16,10 +16,10 @@ import java.util.List;
 @Builder
 public class CreateQuizzDTO {
     @NotBlank
-    @Size(min = 3, max = 1000, message = "O titulo deve ter entre 3 e 1000 caracteres")
+    @Size(min = 3, max = 5000, message = "O titulo deve ter entre 3 e 1000 caracteres")
     private String title;
     @NotBlank
-    @Size(min = 3, max = 10000, message = "O conteudo deve ter entre 3 e 10000 caracteres")
+    @Size(min = 3, max = 50000, message = "O conteudo deve ter entre 3 e 10000 caracteres")
     private String description;
     @NotNull
     private double maxScore;

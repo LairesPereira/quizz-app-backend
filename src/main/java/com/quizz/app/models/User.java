@@ -39,7 +39,7 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Roles role;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch =  FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch =  FetchType.EAGER)
     @JsonManagedReference
     private List<Quizz> quizzList;
 

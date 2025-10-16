@@ -10,6 +10,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.List;
 
@@ -25,18 +27,19 @@ public class Question {
     private String id;
 
     @NotBlank
-    @Size(min = 3, max = 100, message = "Message should have at least 3 caracters.")
+    @Size(min = 3, max = 100000, message = "Message should have at least 3 caracters.")
     private String content;
 
     @NotBlank
+    @Size(min = 3, max = 100000, message = "Answer should have at least 3 caracters.")
     private String answer;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "question", cascade = {CascadeType.MERGE, CascadeType.ALL, CascadeType.REMOVE}, fetch = FetchType.EAGER)
+    @JsonManagedReference
+    private List<Answer> answers;
+
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "quizz_id")
     @JsonBackReference
     private Quizz quizz;
-
-    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, fetch =  FetchType.EAGER)
-    private List<Answer> answers;
-
 }

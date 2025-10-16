@@ -1,11 +1,7 @@
-package com.quizz.app.dto;
+package com.quizz.app.models;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.quizz.app.models.Participant;
-import com.quizz.app.models.Question;
-import com.quizz.app.models.Quizz;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +9,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
-import java.util.Map;
 
 @Entity
 @Table(name = "quizz_result")
@@ -35,9 +30,9 @@ public class QuizzResult {
     private Quizz quizz;
 
     @NotNull
-    private Double score;
+    private Double score = 0.;
 
-    @OneToMany(mappedBy = "quizzResult", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "quizzResult", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
     @JsonManagedReference
     private List<QuestionAndAnswer> questionsAndAnswers;
 
