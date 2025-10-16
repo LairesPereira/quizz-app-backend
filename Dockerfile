@@ -1,14 +1,13 @@
-# Imagem base leve do OpenJDK 17
-FROM eclipse-temurin:17-jdk
-
-# Diretório de trabalho
+# Build
+FROM maven:3.9.3-eclipse-temurin-17 AS build
 WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean package -DskipTests
 
-# Copia o JAR gerado pelo Maven/Gradle
-COPY target/*.jar app.jar
-
-# Expõe a porta que o Spring Boot vai rodar
+# Runtime
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-
-# Comando de start
-ENTRYPOINT ["java","-jar","app.jar"]
+CMD ["java", "-jar", "app.jar"]
