@@ -1,5 +1,5 @@
 # Imagem base leve do OpenJDK 17
-FROM eclipse-temurin:17-jdk-alpine
+FROM eclipse-temurin:17-jdk
 
 # Diretório de trabalho
 WORKDIR /app
