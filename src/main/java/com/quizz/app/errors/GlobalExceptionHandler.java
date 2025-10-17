@@ -1,8 +1,5 @@
-package com.quizz.app.services.errors;
+package com.quizz.app.errors;
 
-import com.quizz.app.errors.AlreadyExistsException;
-import com.quizz.app.errors.ForbiddenException;
-import com.quizz.app.errors.ResourceNotFound;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
