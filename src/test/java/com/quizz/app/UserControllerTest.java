@@ -1,12 +1,14 @@
 package com.quizz.app;
 
+import com.quizz.app.dto.AuthenticationDTO;
+import com.quizz.app.dto.LoginResponseDTO;
 import com.quizz.app.dto.UserRegisterDTO;
-import com.quizz.app.enums.Roles;
 import com.quizz.app.models.User;
-import com.quizz.app.repositorie.UserRepository;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.context.annotation.Import;
@@ -21,7 +23,10 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 @SpringBootTest(webEnvironment =  SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
 @Import(TestSecurityConfig.class)
-public class UserRepositoryTest {
+public class UserControllerTest {
+
+    private static final Logger logger = LoggerFactory.getLogger(UserControllerTest.class);
+
 
     @Autowired
     private TestRestTemplate restTemplate;
@@ -29,9 +34,9 @@ public class UserRepositoryTest {
     @Test
     void testCreateUserShouldReturnCreated() {
         UserRegisterDTO user = UserRegisterDTO.builder()
-                .firstName("Laires")
-                .lastName("Pereira")
-                .email("lairespsoares@gmail.com")
+                .firstName("test")
+                .lastName("test")
+                .email("test@gmail.com")
                 .password("123456")
                 .build();
 
@@ -68,6 +73,38 @@ public class UserRepositoryTest {
         }
     }
 
+    @Test
+    void testLoginUserWithCorrectDataShouldReturnSuccess() {
+        UserRegisterDTO user = UserRegisterDTO.builder()
+                .firstName("test")
+                .lastName("test")
+                .email("test@gmail.com")
+                .password("123456")
+                .build();
 
+        restTemplate.postForEntity("/auth/register", user, Void.class);
 
+        ResponseEntity<LoginResponseDTO> response = restTemplate.postForEntity("/auth/login", user, LoginResponseDTO.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        Assertions.assertNotNull(response.getBody());
+        assertThat(response.getBody().token()).isNotNull();
+    }
+
+    @Test
+    void testLoginUserWithWrongDataShouldFail() {
+        UserRegisterDTO user = UserRegisterDTO.builder()
+                .firstName("test2")
+                .lastName("test2")
+                .email("test2@gmail.com")
+                .password("123456")
+                .build();
+
+        restTemplate.postForEntity("/auth/register", user, Void.class);
+
+        AuthenticationDTO authenticationDTO = new AuthenticationDTO("test2@gmail.com", "0987654321");
+        ResponseEntity<LoginResponseDTO> response = restTemplate.postForEntity("/auth/login", authenticationDTO, LoginResponseDTO.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
+    }
 }
