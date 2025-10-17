@@ -2,6 +2,7 @@ package com.quizz.app;
 
 import com.quizz.app.dto.AuthenticationDTO;
 import com.quizz.app.dto.LoginResponseDTO;
+import com.quizz.app.dto.UserBasicInfoDTO;
 import com.quizz.app.dto.UserRegisterDTO;
 import com.quizz.app.models.User;
 import org.junit.jupiter.api.Assertions;
@@ -12,8 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.context.annotation.Import;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
@@ -94,17 +94,55 @@ public class UserControllerTest {
     @Test
     void testLoginUserWithWrongDataShouldFail() {
         UserRegisterDTO user = UserRegisterDTO.builder()
-                .firstName("test2")
-                .lastName("test2")
-                .email("test2@gmail.com")
+                .firstName("test3")
+                .lastName("test3")
+                .email("test3@gmail.com")
                 .password("123456")
                 .build();
 
         restTemplate.postForEntity("/auth/register", user, Void.class);
 
-        AuthenticationDTO authenticationDTO = new AuthenticationDTO("test2@gmail.com", "0987654321");
+        AuthenticationDTO authenticationDTO = new AuthenticationDTO("test3@gmail.com", "09876adasd54321");
         ResponseEntity<LoginResponseDTO> response = restTemplate.postForEntity("/auth/login", authenticationDTO, LoginResponseDTO.class);
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
+    }
+
+    @Test
+    void testGetUserBasicInfoShouldReturnSuccess() {
+        // 1. Registrar o usuário
+        UserRegisterDTO user = UserRegisterDTO.builder()
+                .firstName("test4")
+                .lastName("test4")
+                .email("test4@gmail.com")
+                .password("123456")
+                .build();
+        restTemplate.postForEntity("/auth/register", user, Void.class);
+
+        // 2. Fazer login e obter token
+        AuthenticationDTO authenticationDTO = new AuthenticationDTO("test4@gmail.com", "123456");
+        ResponseEntity<LoginResponseDTO> loginResponse = restTemplate.postForEntity(
+                "/auth/login", authenticationDTO, LoginResponseDTO.class
+        );
+
+        Assertions.assertNotNull(loginResponse.getBody());
+        String token = loginResponse.getBody().token();
+
+        // 3. Configurar headers com token
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(token);
+        HttpEntity<Void> request = new HttpEntity<>(headers);
+
+        ResponseEntity<UserBasicInfoDTO> responseAuth = restTemplate.exchange(
+                "/auth/me",
+                HttpMethod.GET,
+                request,
+                UserBasicInfoDTO.class
+        );
+
+        assertThat(responseAuth.getStatusCode()).isEqualTo(HttpStatus.OK);
+        Assertions.assertNotNull(responseAuth.getBody());
+        assertThat(responseAuth.getBody().getFirstName()).isNotNull();
+        assertThat(responseAuth.getBody().getLastName()).isNotNull();
     }
 }
