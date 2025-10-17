@@ -33,6 +33,11 @@ public class AuthControllers {
     @Autowired
     TokenService tokenService;
 
+    @GetMapping("/")
+    public String hello() {
+        return "Nothing here :D";
+    }
+
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@Valid @RequestBody UserRegisterDTO userRegisterDTO) {
         if (authServices.save(userRegisterDTO) != null)
