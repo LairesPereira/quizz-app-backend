@@ -42,6 +42,7 @@ public class UserRepositoryTest {
     @Test
     void testCreateUserWithIncompleteDataShouldFail() {
         List<UserRegisterDTO> users = List.of(
+//              Teste para campo nulos
                 UserRegisterDTO.builder().firstName(null).lastName("test").email("test@test.com").password("123456").build(),
                 UserRegisterDTO.builder().firstName("test").lastName(null).email("test@test.com").password("123456").build(),
                 UserRegisterDTO.builder().firstName("test").lastName("test").email(null).password("123456").build(),
@@ -53,6 +54,20 @@ public class UserRepositoryTest {
             assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
         }
     }
+
+    @Test
+    void testCreateUserWithInvalidPassowrdShouldFail() {
+        List<UserRegisterDTO> users = List.of(
+                UserRegisterDTO.builder().firstName("test").lastName("test").email("test@test.com").password("12").build(),
+                UserRegisterDTO.builder().firstName("test").lastName("test").email("test@test.com").password("01031030120301203012301023012030120120310230102").build()
+        );
+
+        for (UserRegisterDTO user : users) {
+            ResponseEntity<Void> response = this.restTemplate.postForEntity("/auth/register", user, Void.class);
+            assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+        }
+    }
+
 
 
 }
