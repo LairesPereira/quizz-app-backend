@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class AnswerDTO {
     private String content;
+
     @JsonProperty("isCorrect")
     private boolean isCorrect;
 }

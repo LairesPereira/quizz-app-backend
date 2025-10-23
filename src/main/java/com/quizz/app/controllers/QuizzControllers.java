@@ -25,15 +25,10 @@ public class QuizzControllers {
     @Transactional
     @PostMapping("/create")
     public ResponseEntity<?> createQuizz(@Valid @RequestBody CreateQuizzDTO createQuizzDTO) {
-        try {
-            if (quizzServices.save(createQuizzDTO) != null) {
-                return ResponseEntity.ok().build();
-            }
-            return ResponseEntity.badRequest().build();
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (quizzServices.save(createQuizzDTO) != null) {
+            return ResponseEntity.ok().build();
         }
-        return null;
+        return ResponseEntity.badRequest().build();
     }
 
     @PatchMapping("/status")

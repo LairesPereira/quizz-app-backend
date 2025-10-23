@@ -32,7 +32,7 @@ public class Question {
 
     @NotBlank
     @Size(min = 3, max = 100000, message = "Answer should have at least 3 caracters.")
-    private String answer;
+    private String answer = "";
 
     @OneToMany(mappedBy = "question", cascade = {CascadeType.MERGE, CascadeType.ALL, CascadeType.REMOVE}, fetch = FetchType.EAGER)
     @JsonManagedReference

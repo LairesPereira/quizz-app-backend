@@ -1,10 +1,10 @@
 package com.quizz.app;
 
+import com.quizz.app.config.TestSecurityConfig;
 import com.quizz.app.dto.AuthenticationDTO;
 import com.quizz.app.dto.LoginResponseDTO;
 import com.quizz.app.dto.UserBasicInfoDTO;
 import com.quizz.app.dto.UserRegisterDTO;
-import com.quizz.app.models.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -26,7 +26,6 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class UserControllerTest {
 
     private static final Logger logger = LoggerFactory.getLogger(UserControllerTest.class);
-
 
     @Autowired
     private TestRestTemplate restTemplate;
