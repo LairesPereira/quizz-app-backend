@@ -16,14 +16,6 @@ public class AuthServices {
     @Autowired
     UserRepository userRepository;
 
-    public User findById(Long id) {
-        return userRepository.findById(id).orElse(null);
-    }
-
-    public User findByEmail(String email) {
-        return (User) userRepository.findByEmail(email);
-    }
-
     public User save(UserRegisterDTO user) {
         if (userRepository.findByEmail(user.getEmail()) != null) {
             throw new AlreadyExistsException("Email já cadastrado!");
