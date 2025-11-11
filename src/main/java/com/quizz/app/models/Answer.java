@@ -23,8 +23,7 @@ public class Answer {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    @NotBlank
-    @Size(max = 100000)
+    @Size(min = 1, max = 100000, message = "A resposta deve ter entre 1 e 100000 caracteres")
     private String answer;
 
     @NotNull
@@ -34,5 +33,4 @@ public class Answer {
     @JoinColumn(name = "question_id")
     @JsonBackReference
     private Question question;
-
 }

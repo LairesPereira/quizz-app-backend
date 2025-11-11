@@ -16,4 +16,6 @@ public interface QuizzRepository extends JpaRepository<Quizz, String> {
 
     @Query(value = "SELECT COUNT(*) FROM participant_quizz WHERE quizz_id = :quizz_id", nativeQuery = true)
     long countParticipantsByQuizzId(@Param("quizz_id") String quizz_id);
+
+    long countByUserId(String id);
 }
