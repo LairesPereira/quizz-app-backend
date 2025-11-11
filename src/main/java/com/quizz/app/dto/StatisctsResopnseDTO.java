@@ -12,6 +12,6 @@ import lombok.NoArgsConstructor;
 public class StatisctsResopnseDTO {
     private Long totalQuizzes;
     private Long totalParticipants;
-    private Long mean;
+    private double meanScore;
     private Long accuracyRate;
 }

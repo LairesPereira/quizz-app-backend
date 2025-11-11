@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -221,9 +222,24 @@ public class QuizzServices {
 
     public StatisctsResopnseDTO getStatistics() {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        long totalQuizzes = Math.toIntExact(quizzRepository.countByUserId(user.getId()));
+        long totalQuizzes = user.getQuizzList().size();
+        long totalParticipants = 0;
+        double sumScores = 0;
+        List<QuizzResult> quizzResults = new ArrayList<>();
+        for (Quizz quizz : user.getQuizzList()) {
+            totalParticipants += quizz.getParticipants().size();
+            for (Participant participant : quizz.getParticipants()) {
+                 quizzResults.addAll(quizzResultRepository.findAllByParticipantId(participant.getId()));
+            }
+        }
+        for (QuizzResult quizzResult : quizzResults) {
+            sumScores += quizzResult.getScore();
+        }
+        System.err.println(sumScores / totalParticipants);
         return StatisctsResopnseDTO.builder()
                 .totalQuizzes(totalQuizzes)
+                .totalParticipants(totalParticipants)
+                .meanScore(sumScores / totalParticipants)
                 .build();
     }
 }
