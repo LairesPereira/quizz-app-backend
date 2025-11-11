@@ -3,7 +3,9 @@ package com.quizz.app.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -36,7 +38,8 @@ public class Question {
 
     @OneToMany(mappedBy = "question", cascade = {CascadeType.MERGE, CascadeType.ALL, CascadeType.REMOVE}, fetch = FetchType.EAGER)
     @JsonManagedReference
-    private List<Answer> answers;
+    @NotEmpty(message = "A questão deve conter pelo menos uma resposta.")
+    private List<@Valid Answer> answers;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "quizz_id")

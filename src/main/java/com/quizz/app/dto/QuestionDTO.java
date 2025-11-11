@@ -1,6 +1,7 @@
 package com.quizz.app.dto;
 
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -21,8 +22,6 @@ public class QuestionDTO {
     @Size(min = 1, max = 1000, message = "A questão deve ter entre 1 e 1000 caracteres")
     private String content;
 
-    @NotNull(message = "As respostas não devem ser nulas")
-    @Size(min = 1, message = "A questão deve conter pelo menos uma resposta")
-    @Valid
-    private List<AnswerDTO> answers;
+    @NotEmpty(message = "A questão deve conter pelo menos uma resposta.")
+    private List<@Valid AnswerDTO> answers;
 }

@@ -55,7 +55,11 @@ public class QuizzControllerTests {
         return Stream.of(
                 Arguments.of("title", "", "O titulo deve ter entre 3 e 1000 caracteres"),
                 Arguments.of("description", "", "A descrição deve ter entre 3 e 10000 caracteres"),
-                Arguments.of("maxScore", null, "O valor do score não deve ser nulo")
+                Arguments.of("maxScore", null, "O valor do score não deve ser nulo"),
+                Arguments.of("questions", "[]", "O quiz deve conter pelo menos uma questão."),
+                Arguments.of("questions[0].content", "", "A questão deve ter entre 1 e 1000 caracteres"),
+                Arguments.of("questions[0].answers", "[]", "A questão deve conter pelo menos uma resposta."),
+                Arguments.of("questions[0].answers[0].content", "", "A resposta deve ter entre 1 e 100000 caracteres")
         );
     }
 
@@ -95,28 +99,39 @@ public class QuizzControllerTests {
         String token = loginResponse.token();
 
         String jsonQuizz = """
-                {
-                    "title": "Quiz de Teste",
-                    "description": "Descrição do quiz de teste",
-                    "maxScore": 10.0,
-                    "questions": [
-                        {
-                            "content": "Qual é a cor do céu?",
-                            "answers": [
-                                {"content": "Azul", "isCorrect": true},
-                                {"content": "Verde", "isCorrect": false}
-                            ]
-                        }
-                    ]
-                }
-                """;
+            {
+                "title": "Quiz de Teste",
+                "description": "Descrição do quiz de teste",
+                "maxScore": 10.0,
+                "questions": [
+                    {
+                        "content": "Qual é a cor do céu?",
+                        "answers": [
+                            {"content": "Azul", "isCorrect": true},
+                            {"content": "Verde", "isCorrect": false}
+                        ]
+                    }
+                ]
+            }
+            """;
 
         jsonQuizz = switch (invalidField) {
-            case "title" -> jsonQuizz.replace("\"title\": \"Quiz de Teste\"", "\"title\": \"\"");
-            case "description" -> jsonQuizz.replace("\"description\": \"Descrição do quiz de teste\"", "\"description\": \"\"");
-            case "maxScore" -> invalidValue == null
-                    ? jsonQuizz.replace("\"maxScore\": 10.0", "\"maxScore\": null")
-                    : jsonQuizz.replace("\"maxScore\": 10.0", "\"maxScore\": " + invalidValue);
+            case "title" ->
+                    jsonQuizz.replace("\"title\": \"Quiz de Teste\"", "\"title\": \"\"");
+            case "description" ->
+                    jsonQuizz.replace("\"description\": \"Descrição do quiz de teste\"", "\"description\": \"\"");
+            case "maxScore" ->
+                    invalidValue == null
+                            ? jsonQuizz.replace("\"maxScore\": 10.0", "\"maxScore\": null")
+                            : jsonQuizz.replace("\"maxScore\": 10.0", "\"maxScore\": " + invalidValue);
+            case "questions" ->
+                    jsonQuizz.replaceFirst("\"questions\": \\[.*\\]", "\"questions\": []");
+            case "questions[0].content" ->
+                    jsonQuizz.replace("\"content\": \"Qual é a cor do céu?\"", "\"content\": \"\"");
+            case "questions[0].answers" ->
+                    jsonQuizz.replaceFirst("\"answers\": \\[.*\\]", "\"answers\": []");
+            case "questions[0].answers[0].content" ->
+                    jsonQuizz.replace("\"content\": \"Azul\"", "\"content\": \"\"");
             default -> jsonQuizz;
         };
 
@@ -127,7 +142,7 @@ public class QuizzControllerTests {
 
         ResponseEntity<Map> response = restTemplate.postForEntity("/quizz/create", request, Map.class);
 
-        logger.info("Response body: {}", response.getBody());
+        logger.info("Field tested: {} | Response body: {}", invalidField, response.getBody());
 
         assertThat(response.getStatusCode())
                 .withFailMessage("Falhou no campo: %s (valor: %s)", invalidField, invalidValue)

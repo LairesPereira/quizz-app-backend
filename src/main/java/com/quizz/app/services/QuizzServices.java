@@ -14,13 +14,10 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Assert;
 
 import java.security.SecureRandom;
 import java.time.LocalDateTime;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -220,5 +217,13 @@ public class QuizzServices {
 
         // finalmente deleta o quiz
         quizzRepository.delete(quizz);
+    }
+
+    public StatisctsResopnseDTO getStatistics() {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long totalQuizzes = Math.toIntExact(quizzRepository.countByUserId(user.getId()));
+        return StatisctsResopnseDTO.builder()
+                .totalQuizzes(totalQuizzes)
+                .build();
     }
 }

@@ -27,9 +27,6 @@ public class CreateQuizzDTO {
     @NotNull(message = "O valor do score não deve ser nulo")
     private Double maxScore;
 
-    @NotNull(message = "As questões não devem estar vazias.")
-    @NotEmpty(message = "As questões não devem estar vazias.")
-    @Size(min = 1, message = "O quiz deve conter pelo menos uma questão.")
-    @Valid
-    private List<QuestionDTO> questions;
+    @NotEmpty(message = "O quiz deve conter pelo menos uma questão.")
+    private List<@Valid QuestionDTO> questions;
 }
