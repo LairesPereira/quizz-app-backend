@@ -42,6 +42,9 @@ public class QuizzServices {
                 .title(createQuizzDTO.getTitle())
                 .description(createQuizzDTO.getDescription())
                 .maxScore(createQuizzDTO.getMaxScore())
+                .isMobileAllowed(createQuizzDTO.getIsMobileAllowed())
+                .allowUserSeeResults(createQuizzDTO.getAllowUserSeeResults())
+                .allowDuplicateEmailOnQuizz(createQuizzDTO.getAllowDuplicateEmailOnQuizz())
                 .createdAt(LocalDateTime.now())
                 .updatedAt(LocalDateTime.now())
                 .status(true)
@@ -209,14 +212,8 @@ public class QuizzServices {
     public void deleteBySlug(String slug) {
         Quizz quizz = quizzRepository.findBySlug(slug);
         if (quizz == null) throw new IllegalArgumentException("Quiz not found");
-
-        // limpa relacionamento ManyToMany (necessário!)
         quizz.getParticipants().clear();
-
-        // deleta todos os resultados relacionados
         quizzResultRepository.deleteAllByQuizzId(quizz.getId());
-
-        // finalmente deleta o quiz
         quizzRepository.delete(quizz);
     }
 
@@ -225,6 +222,7 @@ public class QuizzServices {
         long totalQuizzes = user.getQuizzList().size();
         long totalParticipants = 0;
         double sumScores = 0;
+
         List<QuizzResult> quizzResults = new ArrayList<>();
         for (Quizz quizz : user.getQuizzList()) {
             totalParticipants += quizz.getParticipants().size();
@@ -235,7 +233,7 @@ public class QuizzServices {
         for (QuizzResult quizzResult : quizzResults) {
             sumScores += quizzResult.getScore();
         }
-        System.err.println(sumScores / totalParticipants);
+
         return StatisctsResopnseDTO.builder()
                 .totalQuizzes(totalQuizzes)
                 .totalParticipants(totalParticipants)

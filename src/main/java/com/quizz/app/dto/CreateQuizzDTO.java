@@ -27,6 +27,15 @@ public class CreateQuizzDTO {
     @NotNull(message = "O valor do score não deve ser nulo")
     private Double maxScore;
 
+    @NotNull(message = "As configurações de mobile não devem ser nulas")
+    private Boolean isMobileAllowed;
+
+    @NotNull(message = "As configurações de exibição de resultados não devem ser nulas")
+    private Boolean allowUserSeeResults;
+
+    @NotNull(message = "As configurações de email duplicado não devem ser nulas")
+    private Boolean allowDuplicateEmailOnQuizz;
+
     @NotEmpty(message = "O quiz deve conter pelo menos uma questão.")
     private List<@Valid QuestionDTO> questions;
 }

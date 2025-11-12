@@ -18,6 +18,8 @@ public class QuizzStartedInfoDTO {
     private String quizzSlug;
     private String title;
     private String description;
+    private Boolean isMobileAllowed;
+    private Boolean allowUserSeeResults;
     private double maxScore;
     private List<QuestionDTO> questions;
 }

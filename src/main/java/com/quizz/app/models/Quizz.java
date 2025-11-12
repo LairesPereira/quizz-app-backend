@@ -39,6 +39,15 @@ public class Quizz {
     @NotNull
     private boolean status;
 
+    @Column(nullable = false)
+    private Boolean isMobileAllowed = false;
+
+    @Column(nullable = false)
+    private Boolean allowUserSeeResults = false;
+
+    @Column(nullable = false)
+    private Boolean allowDuplicateEmailOnQuizz = false;
+
     @NotNull
     private double maxScore;
 

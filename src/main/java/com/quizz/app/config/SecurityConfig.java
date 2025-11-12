@@ -39,6 +39,7 @@ public class SecurityConfig {
                         .requestMatchers("/auth/register", "/register", "/h2-console/**").permitAll()
                         .requestMatchers("/", "/auth/login").permitAll()
                         .requestMatchers("/participant/**").permitAll()
+                        .requestMatchers("/quizz/participant/result").permitAll()
                         .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                         .requestMatchers("/auth/list").hasRole("TEACHER")
                         .requestMatchers("/quizz/**").hasRole("TEACHER")

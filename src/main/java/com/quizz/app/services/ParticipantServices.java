@@ -1,6 +1,7 @@
 package com.quizz.app.services;
 
 import com.quizz.app.dto.*;
+import com.quizz.app.errors.ForbiddenException;
 import com.quizz.app.errors.ResourceNotFound;
 import com.quizz.app.models.*;
 import com.quizz.app.repositorie.ParticipantRepository;
@@ -29,6 +30,14 @@ public class ParticipantServices {
         Quizz quizz = quizzRepository.findBySlug(participantBasicInfoDTO.getQuizzSlug());
         if (quizz == null || !quizz.isStatus()) {
             throw new ResourceNotFound("Quizz not found or not available");
+        }
+        if (!quizz.getAllowDuplicateEmailOnQuizz()) {
+            quizz.getParticipants().stream()
+                    .filter(p -> p.getEmail().equals(participantBasicInfoDTO.getEmail()))
+                    .findFirst()
+                    .ifPresent(p -> {
+                        throw new ForbiddenException("Participant already exists");
+                    });
         }
 
         Participant participant = participantRepository.save(Participant.builder()
@@ -59,6 +68,8 @@ public class ParticipantServices {
                 .participantId(participant.getId())
                 .title(quizz.getTitle())
                 .description(quizz.getDescription())
+                .isMobileAllowed(quizz.getIsMobileAllowed())
+                .allowUserSeeResults(quizz.getAllowUserSeeResults())
                 .quizzSlug(quizz.getSlug())
                 .maxScore(quizz.getMaxScore())
                 .questions(questionDTOs)
