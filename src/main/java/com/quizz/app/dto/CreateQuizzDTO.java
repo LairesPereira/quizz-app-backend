@@ -33,6 +33,9 @@ public class CreateQuizzDTO {
     @NotNull(message = "As configurações de exibição de resultados não devem ser nulas")
     private Boolean allowUserSeeResults;
 
+    @NotNull(message = "As configurações de email duplicado não devem ser nulas")
+    private Boolean allowDuplicateEmailOnQuizz;
+
     @NotEmpty(message = "O quiz deve conter pelo menos uma questão.")
     private List<@Valid QuestionDTO> questions;
 }

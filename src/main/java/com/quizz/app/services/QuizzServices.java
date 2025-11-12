@@ -44,6 +44,7 @@ public class QuizzServices {
                 .maxScore(createQuizzDTO.getMaxScore())
                 .isMobileAllowed(createQuizzDTO.getIsMobileAllowed())
                 .allowUserSeeResults(createQuizzDTO.getAllowUserSeeResults())
+                .allowDuplicateEmailOnQuizz(createQuizzDTO.getAllowDuplicateEmailOnQuizz())
                 .createdAt(LocalDateTime.now())
                 .updatedAt(LocalDateTime.now())
                 .status(true)

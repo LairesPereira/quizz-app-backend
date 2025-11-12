@@ -45,6 +45,9 @@ public class Quizz {
     @Column(nullable = false)
     private Boolean allowUserSeeResults = false;
 
+    @Column(nullable = false)
+    private Boolean allowDuplicateEmailOnQuizz = false;
+
     @NotNull
     private double maxScore;
 
