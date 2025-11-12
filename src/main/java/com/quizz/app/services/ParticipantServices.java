@@ -59,6 +59,8 @@ public class ParticipantServices {
                 .participantId(participant.getId())
                 .title(quizz.getTitle())
                 .description(quizz.getDescription())
+                .isMobileAllowed(quizz.getIsMobileAllowed())
+                .allowUserSeeResults(quizz.getAllowUserSeeResults())
                 .quizzSlug(quizz.getSlug())
                 .maxScore(quizz.getMaxScore())
                 .questions(questionDTOs)
