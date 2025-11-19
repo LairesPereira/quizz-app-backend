@@ -20,4 +20,9 @@ public class QuestionsController {
     public List<AlternativesWithAiDTO> generateAlternativesWithAi (@RequestParam String questionText) {
         return geminiServices.generateAlternativesWithAi(questionText);
     }
+
+    @GetMapping("/generate-single-alternative")
+    public AlternativesWithAiDTO generateSingleAlternativeWithAi (@RequestParam String questionText) {
+        return geminiServices.generateSingleAlternativesWithAi(questionText);
+    }
 }
