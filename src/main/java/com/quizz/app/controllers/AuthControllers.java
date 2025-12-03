@@ -8,6 +8,8 @@ import com.quizz.app.dto.UserRegisterDTO;
 import com.quizz.app.models.User;
 import com.quizz.app.services.auth.AuthServices;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseCookie;
@@ -21,6 +23,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/auth")
 public class AuthControllers {
 
+    private static final Logger log = LoggerFactory.getLogger(HelloController.class);
+
     @Autowired
     AuthServices authServices;
 
@@ -32,13 +36,21 @@ public class AuthControllers {
 
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@Valid @RequestBody UserRegisterDTO userRegisterDTO) {
-        if (authServices.save(userRegisterDTO) != null)
+        log.info("Register request for user: " + userRegisterDTO.getEmail());
+
+        if (authServices.save(userRegisterDTO) != null) {
+            log.info("User registered successfully: " + userRegisterDTO.getEmail());
             return ResponseEntity.status(HttpStatus.CREATED).build();
+        }
+
+        log.info("User registration failed: " + userRegisterDTO.getEmail());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponseDTO> login(@RequestBody @Valid AuthenticationDTO data) {
+        log.info("Login request for user: " + data.email());
+
         var userNamePassword = new UsernamePasswordAuthenticationToken(data.email(), data.password());
         var auth = this.authenticationManager.authenticate(userNamePassword);
         var token = tokenService.generateToken((User) auth.getPrincipal());
@@ -50,6 +62,8 @@ public class AuthControllers {
                 .maxAge(24 * 60 * 60)
                 .sameSite("Strict")
                 .build();
+
+        log.info("Login successful for user: " + data.email());
 
         return ResponseEntity.ok()
                 .header("Set-Cookie", cookie.toString())

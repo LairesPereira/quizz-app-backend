@@ -1,0 +1,770 @@
+2025-12-03 19:17:43 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-12-03 19:17:43 INFO  [restartedMain] com.quizz.app.AppApplication - Starting AppApplication using Java 17.0.17 with PID 79926 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-03 19:17:43 INFO  [restartedMain] com.quizz.app.AppApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-03 19:17:43 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-03 19:17:43 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-03 19:17:43 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-03 19:17:43 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 5 JPA repository interfaces.
+2025-12-03 19:17:44 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-03 19:17:44 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-12-03 19:17:44 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-03 19:17:44 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-12-03 19:17:44 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-03 19:17:44 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 757 ms
+2025-12-03 19:17:44 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-03 19:17:44 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-12-03 19:17:44 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-12-03 19:17:44 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-03 19:17:44 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-03 19:17:44 INFO  [restartedMain] com.quizz.app.AppApplication - Starting AppApplication using Java 17.0.17 with PID 79129 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-03 19:17:44 INFO  [restartedMain] com.quizz.app.AppApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-03 19:17:45 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-03 19:17:45 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 5 JPA repository interfaces.
+2025-12-03 19:17:45 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-03 19:17:45 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-03 19:17:45 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-12-03 19:17:45 INFO  [restartedMain] o.a.c.c.C.[Tomcat-7].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-03 19:17:45 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 263 ms
+2025-12-03 19:17:45 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-03 19:17:45 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-12-03 19:17:45 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-03 19:17:45 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-42 - Starting...
+2025-12-03 19:17:47 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@558897d9
+2025-12-03 19:17:47 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-03 19:17:47 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-03 19:17:47 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-42 - Added connection org.postgresql.jdbc.PgConnection@4ad9a9d0
+2025-12-03 19:17:47 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-42 - Start completed.
+2025-12-03 19:17:47 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-03 19:17:48 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-03 19:17:48 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-42)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-03 19:17:56 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:17:56 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:17:56 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2025-12-03 19:17:56 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2025-12-03 19:17:56 INFO  [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-03 19:17:56 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-03 19:17:56 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-03 19:17:56 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-12-03 19:17:56 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-12-03 19:17:56 INFO  [restartedMain] com.quizz.app.AppApplication - Started AppApplication in 12.853 seconds (process running for 38270.058)
+2025-12-03 19:17:57 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-12-03 19:17:57 WARN  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-12-03 19:17:57 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-12-03 19:17:57 WARN  [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-12-03 19:17:57 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:17:57 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-03 19:17:59 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-12-03 19:17:59 INFO  [restartedMain] o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-12-03 19:17:59 ERROR [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-12-03 19:18:21 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-12-03 19:18:21 INFO  [restartedMain] com.quizz.app.AppApplication - Starting AppApplication using Java 17.0.17 with PID 80024 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-03 19:18:21 INFO  [restartedMain] com.quizz.app.AppApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-03 19:18:21 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-03 19:18:21 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-03 19:18:21 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-03 19:18:21 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 5 JPA repository interfaces.
+2025-12-03 19:18:22 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-03 19:18:22 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-12-03 19:18:22 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-03 19:18:22 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-12-03 19:18:22 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-03 19:18:22 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 700 ms
+2025-12-03 19:18:22 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-03 19:18:22 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-12-03 19:18:22 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-12-03 19:18:22 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-03 19:18:22 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-03 19:18:24 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@32efff67
+2025-12-03 19:18:24 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-03 19:18:25 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-03 19:18:26 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-03 19:18:34 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:18:35 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2025-12-03 19:18:35 INFO  [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-03 19:18:35 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-03 19:18:35 WARN  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-12-03 19:18:35 WARN  [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-12-03 19:18:35 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:18:35 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-03 19:18:37 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-12-03 19:19:14 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03 19:19:14 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-03 19:19:14 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:19:14 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-42 - Shutdown initiated...
+2025-12-03 19:19:17 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-42 - Shutdown completed.
+2025-12-03 19:19:23 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-12-03 19:19:24 INFO  [restartedMain] com.quizz.app.AppApplication - Starting AppApplication using Java 17.0.17 with PID 80184 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-03 19:19:24 INFO  [restartedMain] com.quizz.app.AppApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-03 19:19:24 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-03 19:19:24 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-03 19:19:24 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-03 19:19:24 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 5 JPA repository interfaces.
+2025-12-03 19:19:24 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-03 19:19:24 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-12-03 19:19:24 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-03 19:19:24 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-12-03 19:19:24 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-03 19:19:24 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 708 ms
+2025-12-03 19:19:24 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-03 19:19:24 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-12-03 19:19:24 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-12-03 19:19:24 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-03 19:19:24 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-03 19:19:28 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@708f55ff
+2025-12-03 19:19:28 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-03 19:19:28 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-03 19:19:29 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-03 19:19:37 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:19:38 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2025-12-03 19:19:38 INFO  [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-03 19:19:38 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-03 19:19:38 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-12-03 19:19:38 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-12-03 19:19:38 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-12-03 19:19:38 INFO  [restartedMain] com.quizz.app.AppApplication - Started AppApplication in 14.747 seconds (process running for 15.072)
+2025-12-03 19:20:19 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03 19:20:19 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-03 19:20:19 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:20:19 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-03 19:20:21 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-12-03 19:20:23 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-12-03 19:20:23 INFO  [restartedMain] com.quizz.app.AppApplication - Starting AppApplication using Java 17.0.17 with PID 80355 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-03 19:20:23 INFO  [restartedMain] com.quizz.app.AppApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-03 19:20:23 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-03 19:20:23 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-03 19:20:23 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-03 19:20:23 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 5 JPA repository interfaces.
+2025-12-03 19:20:23 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-03 19:20:23 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-12-03 19:20:24 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-03 19:20:24 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-12-03 19:20:24 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-03 19:20:24 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 757 ms
+2025-12-03 19:20:24 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-03 19:20:24 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-12-03 19:20:24 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-12-03 19:20:24 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-03 19:20:24 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-03 19:20:27 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@d78b92b
+2025-12-03 19:20:27 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-03 19:20:27 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-03 19:20:28 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-03 19:20:37 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:20:37 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2025-12-03 19:20:37 INFO  [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-03 19:20:37 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-03 19:20:38 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-12-03 19:20:38 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-12-03 19:20:38 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-12-03 19:20:38 INFO  [restartedMain] com.quizz.app.AppApplication - Started AppApplication in 15.322 seconds (process running for 15.66)
+2025-12-03 19:21:36 INFO  [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-03 19:21:36 INFO  [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-03 19:21:36 INFO  [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2025-12-03 19:21:36 INFO  [http-nio-0.0.0.0-8080-exec-1] c.q.app.controllers.HelloController - Hello! Nothing here... :D
+2025-12-03 19:22:58 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03 19:22:58 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-03 19:22:58 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:22:58 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-03 19:23:01 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-12-03 19:23:02 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-12-03 19:23:03 INFO  [restartedMain] com.quizz.app.AppApplication - Starting AppApplication using Java 17.0.17 with PID 80738 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-03 19:23:03 INFO  [restartedMain] com.quizz.app.AppApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-03 19:23:03 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-03 19:23:03 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-03 19:23:03 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-03 19:23:03 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 5 JPA repository interfaces.
+2025-12-03 19:23:04 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-03 19:23:04 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-12-03 19:23:04 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-03 19:23:04 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-12-03 19:23:04 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-03 19:23:04 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1052 ms
+2025-12-03 19:23:04 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-03 19:23:04 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-12-03 19:23:04 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-12-03 19:23:04 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-03 19:23:04 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-03 19:23:08 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7a0029a8
+2025-12-03 19:23:08 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-03 19:23:08 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-03 19:23:09 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-03 19:23:18 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:23:18 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2025-12-03 19:23:18 INFO  [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-03 19:23:19 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-03 19:23:19 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-12-03 19:23:19 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-12-03 19:23:19 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-12-03 19:23:19 INFO  [restartedMain] com.quizz.app.AppApplication - Started AppApplication in 16.829 seconds (process running for 17.206)
+2025-12-03 19:24:17 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03 19:24:17 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-03 19:24:17 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:24:17 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-03 19:24:19 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-12-03 19:24:21 INFO  [restartedMain] com.quizz.app.AppApplication - Starting AppApplication using Java 17.0.17 with PID 80934 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-03 19:24:21 INFO  [restartedMain] com.quizz.app.AppApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-03 19:24:21 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-03 19:24:21 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-03 19:24:21 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-03 19:24:21 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 5 JPA repository interfaces.
+2025-12-03 19:24:21 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-03 19:24:22 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 708 ms
+2025-12-03 19:24:22 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-03 19:24:34 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:24:34 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2025-12-03 19:24:34 INFO  [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-03 19:24:34 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-03 19:24:34 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-12-03 19:24:34 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-12-03 19:24:34 INFO  [restartedMain] com.quizz.app.AppApplication - Started AppApplication in 14.005 seconds (process running for 14.28)
+2025-12-03 19:24:46 INFO  [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-03 19:24:46 INFO  [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2025-12-03 19:24:46 INFO  [http-nio-0.0.0.0-8080-exec-1] c.q.app.controllers.HelloController - Hello! Nothing here... :D
+2025-12-03 19:24:51 INFO  [http-nio-0.0.0.0-8080-exec-3] c.q.app.controllers.HelloController - Hello! Nothing here... :D
+2025-12-03 19:24:53 INFO  [http-nio-0.0.0.0-8080-exec-5] c.q.app.controllers.HelloController - Hello! Nothing here... :D
+2025-12-03 19:25:33 INFO  [http-nio-0.0.0.0-8080-exec-7] c.q.app.controllers.HelloController - Hello! Nothing here... :D
+2025-12-03 19:27:27 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03 19:27:27 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-03 19:27:27 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:27:31 INFO  [restartedMain] com.quizz.app.AppApplication - Starting AppApplication using Java 17.0.17 with PID 81423 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-03 19:27:31 INFO  [restartedMain] com.quizz.app.AppApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-03 19:27:31 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-03 19:27:31 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-03 19:27:31 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-03 19:27:31 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 5 JPA repository interfaces.
+2025-12-03 19:27:32 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-03 19:27:32 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 693 ms
+2025-12-03 19:27:32 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-03 19:27:46 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:27:46 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2025-12-03 19:27:46 INFO  [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-03 19:27:46 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-03 19:27:46 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-12-03 19:27:46 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-12-03 19:27:46 INFO  [restartedMain] com.quizz.app.AppApplication - Started AppApplication in 15.768 seconds (process running for 16.014)
+2025-12-03 19:29:11 INFO  [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-03 19:29:11 INFO  [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-12-03 19:29:11 INFO  [http-nio-0.0.0.0-8080-exec-1] c.q.app.controllers.HelloController - Hello! Nothing here... :D
+2025-12-03 19:29:19 INFO  [http-nio-0.0.0.0-8080-exec-3] c.q.app.controllers.HelloController - Hello! Nothing here... :D
+2025-12-03 19:32:54 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03 19:32:54 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-03 19:32:54 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:32:59 INFO  [restartedMain] user= - Starting AppApplication using Java 17.0.17 with PID 82281 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-03 19:32:59 INFO  [restartedMain] user= - No active profile set, falling back to 1 default profile: "default"
+2025-12-03 19:32:59 INFO  [restartedMain] user= - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-03 19:32:59 INFO  [restartedMain] user= - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-03 19:33:00 INFO  [restartedMain] user= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-03 19:33:00 INFO  [restartedMain] user= - Finished Spring Data repository scanning in 26 ms. Found 5 JPA repository interfaces.
+2025-12-03 19:33:00 INFO  [restartedMain] user= - Tomcat initialized with port 8080 (http)
+2025-12-03 19:33:00 INFO  [restartedMain] user= - Root WebApplicationContext: initialization completed in 771 ms
+2025-12-03 19:33:00 INFO  [restartedMain] user= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-03 19:33:14 INFO  [restartedMain] user= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:33:14 INFO  [restartedMain] user= - Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2025-12-03 19:33:14 INFO  [restartedMain] user= - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-03 19:33:14 WARN  [restartedMain] user= - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-03 19:33:14 INFO  [restartedMain] user= - LiveReload server is running on port 35729
+2025-12-03 19:33:14 INFO  [restartedMain] user= - Tomcat started on port 8080 (http) with context path '/'
+2025-12-03 19:33:14 INFO  [restartedMain] user= - Started AppApplication in 15.381 seconds (process running for 15.682)
+2025-12-03 19:33:15 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Initializing Servlet 'dispatcherServlet'
+2025-12-03 19:33:15 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Completed initialization in 2 ms
+2025-12-03 19:33:15 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Hello! Nothing here... :D
+2025-12-03 19:33:38 INFO  [SpringApplicationShutdownHook] user= - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03 19:33:38 INFO  [tomcat-shutdown] user= - Graceful shutdown complete
+2025-12-03 19:33:38 INFO  [SpringApplicationShutdownHook] user= - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:33:42 INFO  [restartedMain] user= - Starting AppApplication using Java 17.0.17 with PID 82405 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-03 19:33:42 INFO  [restartedMain] user= - No active profile set, falling back to 1 default profile: "default"
+2025-12-03 19:33:42 INFO  [restartedMain] user= - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-03 19:33:42 INFO  [restartedMain] user= - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-03 19:33:43 INFO  [restartedMain] user= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-03 19:33:43 INFO  [restartedMain] user= - Finished Spring Data repository scanning in 34 ms. Found 5 JPA repository interfaces.
+2025-12-03 19:33:43 INFO  [restartedMain] user= - Tomcat initialized with port 8080 (http)
+2025-12-03 19:33:43 INFO  [restartedMain] user= - Root WebApplicationContext: initialization completed in 760 ms
+2025-12-03 19:33:43 INFO  [restartedMain] user= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-03 19:33:58 INFO  [restartedMain] user= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:33:58 INFO  [restartedMain] user= - Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2025-12-03 19:33:58 INFO  [restartedMain] user= - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-03 19:33:58 WARN  [restartedMain] user= - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-03 19:33:58 INFO  [restartedMain] user= - LiveReload server is running on port 35729
+2025-12-03 19:33:58 INFO  [restartedMain] user= - Tomcat started on port 8080 (http) with context path '/'
+2025-12-03 19:33:58 INFO  [restartedMain] user= - Started AppApplication in 16.223 seconds (process running for 16.47)
+2025-12-03 19:34:09 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Initializing Servlet 'dispatcherServlet'
+2025-12-03 19:34:09 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Completed initialization in 3 ms
+2025-12-03 19:34:09 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Hello! Nothing here... :D
+2025-12-03 19:37:43 INFO  [SpringApplicationShutdownHook] user= - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03 19:37:43 INFO  [tomcat-shutdown] user= - Graceful shutdown complete
+2025-12-03 19:37:43 INFO  [SpringApplicationShutdownHook] user= - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:37:47 INFO  [restartedMain] user= - Starting AppApplication using Java 17.0.17 with PID 83030 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-03 19:37:47 INFO  [restartedMain] user= - No active profile set, falling back to 1 default profile: "default"
+2025-12-03 19:37:47 INFO  [restartedMain] user= - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-03 19:37:47 INFO  [restartedMain] user= - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-03 19:37:48 INFO  [restartedMain] user= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-03 19:37:48 INFO  [restartedMain] user= - Finished Spring Data repository scanning in 27 ms. Found 5 JPA repository interfaces.
+2025-12-03 19:37:48 INFO  [restartedMain] user= - Tomcat initialized with port 8080 (http)
+2025-12-03 19:37:48 INFO  [restartedMain] user= - Root WebApplicationContext: initialization completed in 751 ms
+2025-12-03 19:37:48 INFO  [restartedMain] user= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-03 19:38:02 INFO  [restartedMain] user= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:38:02 INFO  [restartedMain] user= - Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2025-12-03 19:38:02 INFO  [restartedMain] user= - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-03 19:38:02 WARN  [restartedMain] user= - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-03 19:38:03 INFO  [restartedMain] user= - LiveReload server is running on port 35729
+2025-12-03 19:38:03 INFO  [restartedMain] user= - Tomcat started on port 8080 (http) with context path '/'
+2025-12-03 19:38:03 INFO  [restartedMain] user= - Started AppApplication in 15.443 seconds (process running for 15.725)
+2025-12-03 19:38:05 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Initializing Servlet 'dispatcherServlet'
+2025-12-03 19:38:05 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Completed initialization in 1 ms
+2025-12-03 19:38:05 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Hello! Nothing here... :D
+2025-12-03 19:38:08 INFO  [http-nio-0.0.0.0-8080-exec-3] user= - Hello! Nothing here... :D
+2025-12-03 19:40:27 INFO  [SpringApplicationShutdownHook] user= - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03 19:40:27 INFO  [tomcat-shutdown] user= - Graceful shutdown complete
+2025-12-03 19:40:27 INFO  [SpringApplicationShutdownHook] user= - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:40:31 INFO  [restartedMain] user= - Starting AppApplication using Java 17.0.17 with PID 83458 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-03 19:40:31 INFO  [restartedMain] user= - No active profile set, falling back to 1 default profile: "default"
+2025-12-03 19:40:31 INFO  [restartedMain] user= - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-03 19:40:31 INFO  [restartedMain] user= - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-03 19:40:31 INFO  [restartedMain] user= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-03 19:40:31 INFO  [restartedMain] user= - Finished Spring Data repository scanning in 23 ms. Found 5 JPA repository interfaces.
+2025-12-03 19:40:31 INFO  [restartedMain] user= - Tomcat initialized with port 8080 (http)
+2025-12-03 19:40:32 INFO  [restartedMain] user= - Root WebApplicationContext: initialization completed in 724 ms
+2025-12-03 19:40:32 INFO  [restartedMain] user= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-03 19:40:44 INFO  [restartedMain] user= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:40:44 INFO  [restartedMain] user= - Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2025-12-03 19:40:44 INFO  [restartedMain] user= - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-03 19:40:44 WARN  [restartedMain] user= - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-03 19:40:44 INFO  [restartedMain] user= - LiveReload server is running on port 35729
+2025-12-03 19:40:44 INFO  [restartedMain] user= - Tomcat started on port 8080 (http) with context path '/'
+2025-12-03 19:40:44 INFO  [restartedMain] user= - Started AppApplication in 13.934 seconds (process running for 14.201)
+2025-12-03 19:40:45 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Initializing Servlet 'dispatcherServlet'
+2025-12-03 19:40:45 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Completed initialization in 1 ms
+2025-12-03 19:40:45 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Hello! Nothing here... :D
+2025-12-03 19:44:11 INFO  [SpringApplicationShutdownHook] user= - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03 19:44:11 INFO  [tomcat-shutdown] user= - Graceful shutdown complete
+2025-12-03 19:44:11 INFO  [SpringApplicationShutdownHook] user= - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:44:15 INFO  [restartedMain] user= - Starting AppApplication using Java 17.0.17 with PID 84030 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-03 19:44:15 INFO  [restartedMain] user= - No active profile set, falling back to 1 default profile: "default"
+2025-12-03 19:44:15 INFO  [restartedMain] user= - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-03 19:44:15 INFO  [restartedMain] user= - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-03 19:44:15 INFO  [restartedMain] user= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-03 19:44:15 INFO  [restartedMain] user= - Finished Spring Data repository scanning in 25 ms. Found 5 JPA repository interfaces.
+2025-12-03 19:44:16 INFO  [restartedMain] user= - Tomcat initialized with port 8080 (http)
+2025-12-03 19:44:16 INFO  [restartedMain] user= - Root WebApplicationContext: initialization completed in 866 ms
+2025-12-03 19:44:16 INFO  [restartedMain] user= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-03 19:44:30 INFO  [restartedMain] user= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:44:30 INFO  [restartedMain] user= - Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2025-12-03 19:44:30 INFO  [restartedMain] user= - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-03 19:44:30 WARN  [restartedMain] user= - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-03 19:44:30 INFO  [restartedMain] user= - LiveReload server is running on port 35729
+2025-12-03 19:44:30 INFO  [restartedMain] user= - Tomcat started on port 8080 (http) with context path '/'
+2025-12-03 19:44:30 INFO  [restartedMain] user= - Started AppApplication in 15.48 seconds (process running for 15.749)
+2025-12-03 19:44:54 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Initializing Servlet 'dispatcherServlet'
+2025-12-03 19:44:54 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Completed initialization in 3 ms
+2025-12-03 19:44:54 INFO  [http-nio-0.0.0.0-8080-exec-2] user= - Login request for user: lairespsoares@gmail.com
+2025-12-03 19:44:54 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select u1_0.id,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+2025-12-03 19:44:54 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select ql1_0.user_id,ql1_0.id,ql1_0.allow_duplicate_email_on_quizz,ql1_0.allow_user_see_results,ql1_0.created_at,ql1_0.description,ql1_0.is_mobile_allowed,ql1_0.max_score,ql1_0.slug,ql1_0.status,ql1_0.title,ql1_0.updated_at from quizz ql1_0 where ql1_0.user_id=?
+2025-12-03 19:44:55 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:44:55 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:44:55 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:44:55 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:44:56 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:44:56 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:44:56 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:44:57 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:44:57 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:44:57 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:44:58 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:44:58 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:44:58 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:44:59 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:44:59 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:44:59 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:44:59 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:44:59 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:00 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:00 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:00 DEBUG [http-nio-0.0.0.0-8080-exec-2] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:01 INFO  [http-nio-0.0.0.0-8080-exec-2] user= - Login successful for user: lairespsoares@gmail.com
+2025-12-03 19:45:03 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select u1_0.id,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+2025-12-03 19:45:03 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select u1_0.id,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+2025-12-03 19:45:03 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select ql1_0.user_id,ql1_0.id,ql1_0.allow_duplicate_email_on_quizz,ql1_0.allow_user_see_results,ql1_0.created_at,ql1_0.description,ql1_0.is_mobile_allowed,ql1_0.max_score,ql1_0.slug,ql1_0.status,ql1_0.title,ql1_0.updated_at from quizz ql1_0 where ql1_0.user_id=?
+2025-12-03 19:45:03 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select ql1_0.user_id,ql1_0.id,ql1_0.allow_duplicate_email_on_quizz,ql1_0.allow_user_see_results,ql1_0.created_at,ql1_0.description,ql1_0.is_mobile_allowed,ql1_0.max_score,ql1_0.slug,ql1_0.status,ql1_0.title,ql1_0.updated_at from quizz ql1_0 where ql1_0.user_id=?
+2025-12-03 19:45:03 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:03 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:03 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:03 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:04 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:04 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:04 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:04 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:04 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:04 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:05 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:05 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:05 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:05 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:05 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:05 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:05 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:05 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:06 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:06 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:06 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:06 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:06 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:06 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:06 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:06 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:06 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:06 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:07 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:07 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:07 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:07 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:07 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:07 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:08 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:08 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:08 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:08 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:08 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:08 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:09 DEBUG [http-nio-0.0.0.0-8080-exec-7] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:09 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:09 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select q1_0.id,q1_0.allow_duplicate_email_on_quizz,q1_0.allow_user_see_results,q1_0.created_at,q1_0.description,q1_0.is_mobile_allowed,q1_0.max_score,q1_0.slug,q1_0.status,q1_0.title,q1_0.updated_at,q1_0.user_id from quizz q1_0 left join users u1_0 on u1_0.id=q1_0.user_id where u1_0.id=?
+2025-12-03 19:45:09 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select u1_0.id,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+2025-12-03 19:45:09 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select u1_0.id,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+2025-12-03 19:45:09 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select ql1_0.user_id,ql1_0.id,ql1_0.allow_duplicate_email_on_quizz,ql1_0.allow_user_see_results,ql1_0.created_at,ql1_0.description,ql1_0.is_mobile_allowed,ql1_0.max_score,ql1_0.slug,ql1_0.status,ql1_0.title,ql1_0.updated_at from quizz ql1_0 where ql1_0.user_id=?
+2025-12-03 19:45:09 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select u1_0.id,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.role,ql1_0.user_id,ql1_0.id,ql1_0.allow_duplicate_email_on_quizz,ql1_0.allow_user_see_results,ql1_0.created_at,ql1_0.description,ql1_0.is_mobile_allowed,ql1_0.max_score,ql1_0.slug,ql1_0.status,ql1_0.title,ql1_0.updated_at from users u1_0 left join quizz ql1_0 on u1_0.id=ql1_0.user_id where u1_0.id=?
+2025-12-03 19:45:09 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select ql1_0.user_id,ql1_0.id,ql1_0.allow_duplicate_email_on_quizz,ql1_0.allow_user_see_results,ql1_0.created_at,ql1_0.description,ql1_0.is_mobile_allowed,ql1_0.max_score,ql1_0.slug,ql1_0.status,ql1_0.title,ql1_0.updated_at from quizz ql1_0 where ql1_0.user_id=?
+2025-12-03 19:45:09 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:09 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:10 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:10 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:10 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:10 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:10 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:10 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:10 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:10 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:10 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:11 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:11 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:11 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:11 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:11 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:11 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:11 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:11 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:11 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:11 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:11 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:11 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:11 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:11 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:11 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:12 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:12 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:12 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:12 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:12 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:12 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:12 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:12 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:12 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:12 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:12 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:12 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:12 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:12 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:13 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:13 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:13 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:13 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:13 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:13 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:13 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:13 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:13 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:13 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:13 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:13 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:14 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:14 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:14 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:14 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:14 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:14 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:14 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:14 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:14 DEBUG [http-nio-0.0.0.0-8080-exec-9] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:14 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:14 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - SELECT COUNT(*) FROM participant_quizz WHERE quizz_id = ?
+2025-12-03 19:45:15 DEBUG [http-nio-0.0.0.0-8080-exec-1] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:15 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - SELECT COUNT(*) FROM participant_quizz WHERE quizz_id = ?
+2025-12-03 19:45:15 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - SELECT COUNT(*) FROM participant_quizz WHERE quizz_id = ?
+2025-12-03 19:45:15 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:15 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - SELECT COUNT(*) FROM participant_quizz WHERE quizz_id = ?
+2025-12-03 19:45:15 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select p1_0.id,p1_0.email,p1_0.name,p1_0.status from participant p1_0 where p1_0.id=?
+2025-12-03 19:45:15 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select q1_0.id,q1_0.allow_duplicate_email_on_quizz,q1_0.allow_user_see_results,q1_0.created_at,q1_0.description,q1_0.is_mobile_allowed,q1_0.max_score,q1_0.slug,q1_0.status,q1_0.title,q1_0.updated_at,u1_0.id,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.role,p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from quizz q1_0 left join users u1_0 on u1_0.id=q1_0.user_id left join participant_quizz p1_0 on q1_0.id=p1_0.quizz_id left join participant p1_1 on p1_1.id=p1_0.participant_id where q1_0.id=?
+2025-12-03 19:45:15 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - SELECT COUNT(*) FROM participant_quizz WHERE quizz_id = ?
+2025-12-03 19:45:16 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - SELECT COUNT(*) FROM participant_quizz WHERE quizz_id = ?
+2025-12-03 19:45:16 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select ql1_0.user_id,ql1_0.id,ql1_0.allow_duplicate_email_on_quizz,ql1_0.allow_user_see_results,ql1_0.created_at,ql1_0.description,ql1_0.is_mobile_allowed,ql1_0.max_score,ql1_0.slug,ql1_0.status,ql1_0.title,ql1_0.updated_at from quizz ql1_0 where ql1_0.user_id=?
+2025-12-03 19:45:16 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:16 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select u1_0.id,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+2025-12-03 19:45:16 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select ql1_0.user_id,ql1_0.id,ql1_0.allow_duplicate_email_on_quizz,ql1_0.allow_user_see_results,ql1_0.created_at,ql1_0.description,ql1_0.is_mobile_allowed,ql1_0.max_score,ql1_0.slug,ql1_0.status,ql1_0.title,ql1_0.updated_at from quizz ql1_0 where ql1_0.user_id=?
+2025-12-03 19:45:16 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:16 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:16 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:17 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:17 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:17 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:17 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:17 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:17 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:18 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:18 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:18 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:18 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:18 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:18 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:18 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:18 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:19 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:19 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:19 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:19 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:19 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:19 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:19 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:19 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:20 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:20 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:20 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:20 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:20 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:20 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:20 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:20 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:21 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:21 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:21 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:21 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:21 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:21 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:21 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:21 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:21 DEBUG [http-nio-0.0.0.0-8080-exec-8] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:21 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:22 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select q1_0.id,q1_0.allow_duplicate_email_on_quizz,q1_0.allow_user_see_results,q1_0.created_at,q1_0.description,q1_0.is_mobile_allowed,q1_0.max_score,q1_0.slug,q1_0.status,q1_0.title,q1_0.updated_at,q1_0.user_id from quizz q1_0 left join users u1_0 on u1_0.id=q1_0.user_id where u1_0.id=?
+2025-12-03 19:45:22 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:22 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select u1_0.id,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.role,ql1_0.user_id,ql1_0.id,ql1_0.allow_duplicate_email_on_quizz,ql1_0.allow_user_see_results,ql1_0.created_at,ql1_0.description,ql1_0.is_mobile_allowed,ql1_0.max_score,ql1_0.slug,ql1_0.status,ql1_0.title,ql1_0.updated_at from users u1_0 left join quizz ql1_0 on u1_0.id=ql1_0.user_id where u1_0.id=?
+2025-12-03 19:45:22 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:22 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:22 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:22 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:22 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:23 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:23 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:23 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:23 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:23 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:23 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:23 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:23 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:23 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:24 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:24 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:24 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:24 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:24 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:24 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:24 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:24 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:24 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:25 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:25 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:25 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:25 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:25 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:25 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:25 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:25 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:26 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:26 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:26 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:26 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:26 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:26 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:26 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:27 DEBUG [http-nio-0.0.0.0-8080-exec-1] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:27 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:27 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select u1_0.id,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.role from users u1_0 where u1_0.email=?
+2025-12-03 19:45:27 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - SELECT COUNT(*) FROM participant_quizz WHERE quizz_id = ?
+2025-12-03 19:45:27 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - SELECT COUNT(*) FROM participant_quizz WHERE quizz_id = ?
+2025-12-03 19:45:27 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select ql1_0.user_id,ql1_0.id,ql1_0.allow_duplicate_email_on_quizz,ql1_0.allow_user_see_results,ql1_0.created_at,ql1_0.description,ql1_0.is_mobile_allowed,ql1_0.max_score,ql1_0.slug,ql1_0.status,ql1_0.title,ql1_0.updated_at from quizz ql1_0 where ql1_0.user_id=?
+2025-12-03 19:45:27 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - SELECT COUNT(*) FROM participant_quizz WHERE quizz_id = ?
+2025-12-03 19:45:27 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:28 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - SELECT COUNT(*) FROM participant_quizz WHERE quizz_id = ?
+2025-12-03 19:45:28 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:28 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - SELECT COUNT(*) FROM participant_quizz WHERE quizz_id = ?
+2025-12-03 19:45:28 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:28 DEBUG [http-nio-0.0.0.0-8080-exec-8] user=lairespsoares@gmail.com - SELECT COUNT(*) FROM participant_quizz WHERE quizz_id = ?
+2025-12-03 19:45:28 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:28 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:29 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:29 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:29 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:29 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:30 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:30 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:30 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:30 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:31 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:31 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:31 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:31 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:32 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:32 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:32 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:32 DEBUG [http-nio-0.0.0.0-8080-exec-4] user= - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:33 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:33 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select p1_0.id,p1_0.email,p1_0.name,p1_0.status from participant p1_0 where p1_0.id=?
+2025-12-03 19:45:33 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select q1_0.id,q1_0.allow_duplicate_email_on_quizz,q1_0.allow_user_see_results,q1_0.created_at,q1_0.description,q1_0.is_mobile_allowed,q1_0.max_score,q1_0.slug,q1_0.status,q1_0.title,q1_0.updated_at,u1_0.id,u1_0.email,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.role,p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from quizz q1_0 left join users u1_0 on u1_0.id=q1_0.user_id left join participant_quizz p1_0 on q1_0.id=p1_0.quizz_id left join participant p1_1 on p1_1.id=p1_0.participant_id where q1_0.id=?
+2025-12-03 19:45:33 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select ql1_0.user_id,ql1_0.id,ql1_0.allow_duplicate_email_on_quizz,ql1_0.allow_user_see_results,ql1_0.created_at,ql1_0.description,ql1_0.is_mobile_allowed,ql1_0.max_score,ql1_0.slug,ql1_0.status,ql1_0.title,ql1_0.updated_at from quizz ql1_0 where ql1_0.user_id=?
+2025-12-03 19:45:34 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:34 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:34 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:34 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:35 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:35 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:35 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:36 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:36 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:36 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:36 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:37 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:37 INFO  [SpringApplicationShutdownHook] user= - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03 19:45:37 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:37 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:37 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:38 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:38 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:38 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select p1_0.quizz_id,p1_1.id,p1_1.email,p1_1.name,p1_1.status from participant_quizz p1_0 join participant p1_1 on p1_1.id=p1_0.participant_id where p1_0.quizz_id=?
+2025-12-03 19:45:38 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select q1_0.quizz_id,q1_0.id,q1_0.answer,q1_0.content from question q1_0 where q1_0.quizz_id=?
+2025-12-03 19:45:39 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select a1_0.question_id,a1_0.id,a1_0.answer,a1_0.is_correct from answer a1_0 where a1_0.question_id=?
+2025-12-03 19:45:39 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:39 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:40 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:40 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:40 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:41 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:41 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:41 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:42 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:42 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:42 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:42 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:43 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:43 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:45:43 DEBUG [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - select qr1_0.id,qr1_0.participant_id,qr1_0.quizz_id,qr1_0.score from quizz_result qr1_0 left join participant p1_0 on p1_0.id=qr1_0.participant_id where p1_0.id=?
+2025-12-03 19:51:21 INFO  [restartedMain] user= - Starting AppApplication using Java 17.0.17 with PID 85338 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-03 19:51:21 INFO  [restartedMain] user= - No active profile set, falling back to 1 default profile: "default"
+2025-12-03 19:51:21 INFO  [restartedMain] user= - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-03 19:51:21 INFO  [restartedMain] user= - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-03 19:51:21 INFO  [restartedMain] user= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-03 19:51:21 INFO  [restartedMain] user= - Finished Spring Data repository scanning in 24 ms. Found 5 JPA repository interfaces.
+2025-12-03 19:51:22 INFO  [restartedMain] user= - Tomcat initialized with port 8080 (http)
+2025-12-03 19:51:22 INFO  [restartedMain] user= - Root WebApplicationContext: initialization completed in 935 ms
+2025-12-03 19:51:22 INFO  [restartedMain] user= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-03 19:51:35 INFO  [restartedMain] user= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:51:35 INFO  [restartedMain] user= - Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2025-12-03 19:51:35 INFO  [restartedMain] user= - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-03 19:51:35 WARN  [restartedMain] user= - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-03 19:51:35 INFO  [restartedMain] user= - LiveReload server is running on port 35729
+2025-12-03 19:51:35 INFO  [restartedMain] user= - Tomcat started on port 8080 (http) with context path '/'
+2025-12-03 19:51:35 INFO  [restartedMain] user= - Started AppApplication in 14.748 seconds (process running for 15.219)
+2025-12-03 19:51:41 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Initializing Servlet 'dispatcherServlet'
+2025-12-03 19:51:41 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Completed initialization in 8 ms
+2025-12-03 19:51:41 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Login request for user: lairespsoares@gmail.com
+2025-12-03 19:51:48 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Login successful for user: lairespsoares@gmail.com
+2025-12-03 19:54:38 INFO  [SpringApplicationShutdownHook] user= - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03 19:54:38 INFO  [tomcat-shutdown] user= - Graceful shutdown complete
+2025-12-03 19:54:38 INFO  [SpringApplicationShutdownHook] user= - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:54:43 INFO  [restartedMain] user= - Starting AppApplication using Java 17.0.17 with PID 85922 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-03 19:54:43 INFO  [restartedMain] user= - No active profile set, falling back to 1 default profile: "default"
+2025-12-03 19:54:43 INFO  [restartedMain] user= - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-03 19:54:43 INFO  [restartedMain] user= - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-03 19:54:44 INFO  [restartedMain] user= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-03 19:54:44 INFO  [restartedMain] user= - Finished Spring Data repository scanning in 24 ms. Found 5 JPA repository interfaces.
+2025-12-03 19:54:44 INFO  [restartedMain] user= - Tomcat initialized with port 8080 (http)
+2025-12-03 19:54:44 INFO  [restartedMain] user= - Root WebApplicationContext: initialization completed in 739 ms
+2025-12-03 19:54:44 INFO  [restartedMain] user= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-03 19:54:58 INFO  [restartedMain] user= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-03 19:54:58 INFO  [restartedMain] user= - Global AuthenticationManager configured with UserDetailsService bean with name authorizationService
+2025-12-03 19:54:58 INFO  [restartedMain] user= - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-03 19:54:58 WARN  [restartedMain] user= - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-03 19:54:59 INFO  [restartedMain] user= - LiveReload server is running on port 35729
+2025-12-03 19:54:59 INFO  [restartedMain] user= - Tomcat started on port 8080 (http) with context path '/'
+2025-12-03 19:54:59 INFO  [restartedMain] user= - Started AppApplication in 15.631 seconds (process running for 15.984)
+2025-12-03 19:55:09 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Initializing Servlet 'dispatcherServlet'
+2025-12-03 19:55:09 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Completed initialization in 6 ms
+2025-12-03 19:55:09 INFO  [http-nio-0.0.0.0-8080-exec-2] user= - Register request for user: matheus@gmail.com
+2025-12-03 19:55:11 INFO  [http-nio-0.0.0.0-8080-exec-2] user= - User registered successfully: matheus@gmail.com
+2025-12-03 19:55:38 INFO  [http-nio-0.0.0.0-8080-exec-3] user= - Register request for user: matheus@gmail.com
+2025-12-03 19:55:38 WARN  [http-nio-0.0.0.0-8080-exec-3] user= - Resolved [com.quizz.app.errors.AlreadyExistsException: Email já cadastrado!]
+2025-12-03 19:56:15 INFO  [http-nio-0.0.0.0-8080-exec-4] user= - Register request for user: matheus@gmail.com
+2025-12-03 19:56:16 WARN  [http-nio-0.0.0.0-8080-exec-4] user= - Resolved [com.quizz.app.errors.AlreadyExistsException: Email já cadastrado!]

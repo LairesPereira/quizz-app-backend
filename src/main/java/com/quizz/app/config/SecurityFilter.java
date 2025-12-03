@@ -5,6 +5,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -30,12 +31,12 @@ public class SecurityFilter extends OncePerRequestFilter {
 
         String token = recoverToken(request);
 
-        // ✅ Só tenta autenticar se houver token
         if (token != null) {
             String login = tokenService.validateToken(token);
 
             if (login != null) {
                 UserDetails user = userRepository.findByEmail(login);
+                MDC.put("userId", user.getUsername());
 
                 if (user != null) {
                     UsernamePasswordAuthenticationToken auth =
@@ -44,8 +45,8 @@ public class SecurityFilter extends OncePerRequestFilter {
                 }
             }
         }
-
         filterChain.doFilter(request, response);
+        MDC.clear();
     }
 
     private String recoverToken(HttpServletRequest request) {
