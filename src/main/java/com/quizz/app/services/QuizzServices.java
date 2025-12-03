@@ -97,16 +97,15 @@ public class QuizzServices {
                 .count();
 
         if (correct != 1) {
-            throw new IllegalArgumentException("Only one answer can be correct");
+            throw new IllegalArgumentException("A questão deve ter apenas uma resposta correta.");
         }
     }
 
     public boolean toggleStatus(String slug) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Quizz quizz = quizzRepository.findBySlug(slug);
-        if (quizz == null) {
-            throw new ResourceNotFound("Quizz not found");
-        }
+        Quizz quizz = quizzRepository.findBySlug(slug)
+                .orElseThrow(() -> new ResourceNotFound("Quizz not found"));
+
         if (!quizz.getUser().getId().equals(user.getId())) {
             throw new ForbiddenException("You are not allowed to toggle this status");
         }
@@ -118,28 +117,24 @@ public class QuizzServices {
     public List<QuizzBasicInfoDTO> findAll() {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         List<Quizz> quizzes = quizzRepository.findAllByUserId(user.getId());
-        List<QuizzBasicInfoDTO> quizzBasicInfoDTOList = quizzes.stream().map(quizz -> QuizzBasicInfoDTO.builder()
+        return quizzes.stream().map(quizz -> QuizzBasicInfoDTO.builder()
                 .title(quizz.getTitle())
                 .description(quizz.getDescription())
                 .status(quizz.isStatus())
                 .maxScore(quizz.getMaxScore())
                 .slug(quizz.getSlug())
                 .createdAt(quizz.getCreatedAt())
-                .participants(countQuizzParticipantis(quizz.getId()))
+                .participants(countQuizzParticipants(quizz.getId()))
                 .build()).collect(Collectors.toList());
-        return quizzBasicInfoDTOList;
     }
 
-    private long countQuizzParticipantis(String quizz_id) {
+    private long countQuizzParticipants(String quizz_id) {
         return quizzRepository.countParticipantsByQuizzId(quizz_id);
     }
 
     public List<ParticipantQuizzInfo> getParticipantsBasicInfoByQuizzSlug(String slug) {
-        Quizz quizz = quizzRepository.findBySlug(slug);
-
-        if (quizz == null) {
-            throw new ResourceNotFound("Quizz not found");
-        }
+        Quizz quizz = quizzRepository.findBySlug(slug)
+                .orElseThrow(() -> new ResourceNotFound("Quizz not found"));
 
         List<Participant> quizzParticipants = quizz.getParticipants();
         List<ParticipantQuizzInfo> participantQuizzInfoList = quizz.getParticipants().stream()
@@ -156,47 +151,47 @@ public class QuizzServices {
     }
 
     public Quizz findBySlug(String slug) {
-        return quizzRepository.findBySlug(slug);
+        return quizzRepository.findBySlug(slug)
+                .orElseThrow(() -> new ResourceNotFound("Quizz not found"));
     }
 
     public double getParticipantScoreByQuizzSlug(String quizzId, String participantId) {
-        QuizzResult score = quizzResultRepository.findByParticipantIdAndQuizzId(participantId, quizzId);
-        return score.getScore();
+        QuizzResult quizzResult = quizzResultRepository.findByParticipantIdAndQuizzId(participantId, quizzId)
+                        .orElseThrow(() -> new ResourceNotFound("Não foi possível encontrar o score para o participante: " + participantId));
+
+        if (quizzResult.getScore() == null) {
+            throw new ResourceNotFound("Não foi possível encontrar o score para o participante: " + participantId);
+        }
+
+        return quizzResult.getScore();
     }
 
     public double getMaxScoreBySlug(String slug) {
-        Quizz quizz = quizzRepository.findBySlug(slug);
-        if (quizz == null) {
-            throw  new ResourceNotFound("Quizz not found");
-        }
+        Quizz quizz = quizzRepository.findBySlug(slug)
+                .orElseThrow(() -> new ResourceNotFound("Quizz not found"));
         return quizz.getMaxScore();
     }
 
     public ParticipantResultDTO getParticipantResultByQuizzSlugAndParticipantId(String slug, String participantId) {
-        Quizz quizz = quizzRepository.findBySlug(slug);
-        if (quizz == null) {
-            throw new ResourceNotFound("Quizz not found");
-        }
+        Quizz quizz = quizzRepository.findBySlug(slug)
+                .orElseThrow(() -> new ResourceNotFound("Quizz not found"));
 
         Participant participant = participantRepository.findById(participantId)
                 .orElseThrow(() -> new ResourceNotFound("Participant not found"));
 
-        QuizzResult quizzResult = quizzResultRepository.findByParticipantIdAndQuizzId(participantId, quizz.getId());
-        if (quizzResult == null) {
-            throw new ResourceNotFound("Result not found");
-        }
+        QuizzResult quizzResult = quizzResultRepository.findByParticipantIdAndQuizzId(participantId, quizz.getId())
+                .orElseThrow(() -> new ResourceNotFound("Result not found"));
+
 
         List<QuestionAndAnswer> qaList = questionAndAnswerRepository.findByQuizzResultId(quizzResult.getId());
 
         List<QuestionAndAnswerDTO> questionDTOs = qaList.stream()
-                .map(qa -> {
-                    return QuestionAndAnswerDTO.builder()
-                           .id(qa.getId())
-                           .questionText(qa.getOriginalQuestion())
-                           .correctAnswer(qa.getCorrectAnswer())
-                           .participantAnswer(qa.getAnswer())
-                           .build();
-                })
+                .map(qa -> QuestionAndAnswerDTO.builder()
+                       .id(qa.getId())
+                       .questionText(qa.getOriginalQuestion())
+                       .correctAnswer(qa.getCorrectAnswer())
+                       .participantAnswer(qa.getAnswer())
+                       .build())
                 .collect(Collectors.toList());
 
         return ParticipantResultDTO.builder()
@@ -208,17 +203,23 @@ public class QuizzServices {
                 .build();
     }
 
-    @Transactional
-    public void deleteBySlug(String slug) {
-        Quizz quizz = quizzRepository.findBySlug(slug);
-        if (quizz == null) throw new IllegalArgumentException("Quiz not found");
-        quizz.getParticipants().clear();
-        quizzResultRepository.deleteAllByQuizzId(quizz.getId());
-        quizzRepository.delete(quizz);
-    }
+//    @Transactional
+//    public void deleteBySlug(String slug) {
+//        Quizz quizz = quizzRepository.findBySlug(slug)
+//                .orElseThrow(() -> new ResourceNotFound("Quizz not found"));
+//
+//        quizz.getParticipants().clear();
+//        quizzResultRepository.deleteAllByQuizzId(quizz.getId());
+//        quizzRepository.delete(quizz);
+//    }
 
     public StatisctsResopnseDTO getStatistics() {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        if (user.getQuizzList().isEmpty()) {
+            throw new ResourceNotFound("Não foi possível encontrar os quizzes do usuário!");
+        }
+
         long totalQuizzes = user.getQuizzList().size();
         long totalParticipants = 0;
         double sumScores = 0;

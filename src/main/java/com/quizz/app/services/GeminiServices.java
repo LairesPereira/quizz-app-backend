@@ -3,13 +3,16 @@ package com.quizz.app.services;
 import com.google.genai.Client;
 import com.google.genai.types.GenerateContentResponse;
 import com.quizz.app.dto.AlternativesWithAiDTO;
+import lombok.Generated;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 @Service
+@Generated
 public class GeminiServices {
     private final int DEFAULT_INCORRECT_ALTERNATIVES = 3;
     private final int DEFAULT_CORRECT_ALTERNATIVES = 1;

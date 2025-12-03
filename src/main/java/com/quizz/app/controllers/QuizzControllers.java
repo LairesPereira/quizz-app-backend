@@ -65,10 +65,4 @@ public class QuizzControllers {
     public ResponseEntity<?> getQuizzMaxScore(@RequestParam String slug) {
         return ResponseEntity.ok(Map.of("maxScore", quizzServices.getMaxScoreBySlug(slug)));
     }
-
-    @DeleteMapping("/delete{slug}")
-    public ResponseEntity<?> deleteQuizzBySlug(@RequestParam String slug) {
-        quizzServices.deleteBySlug(slug);
-        return  ResponseEntity.ok().build();
-    }
 }

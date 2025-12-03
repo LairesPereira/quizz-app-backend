@@ -8,10 +8,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface QuizzRepository extends JpaRepository<Quizz, String> {
     Quizz save(Quizz quizz);
-    Quizz findBySlug(String slug);
+    Optional<Quizz> findBySlug(String slug);
     List<Quizz> findAllByUserId(String id);
 
     @Query(value = "SELECT COUNT(*) FROM participant_quizz WHERE quizz_id = :quizz_id", nativeQuery = true)

@@ -33,12 +33,12 @@ public class ParticipantControllers {
         return ResponseEntity.ok(Map.of("message", "Quiz finalizado com sucesso!"));
     }
 
-    @Transactional
-    @DeleteMapping("/quizz/remove{id}")
-    public ResponseEntity<?> removeParticipant(@RequestParam String id) {
-        if (participantServices.removeParticipantsById(id) != null) {
-            return ResponseEntity.ok().build();
-        }
-        return  ResponseEntity.badRequest().build();
-    }
+//    @Transactional
+//    @DeleteMapping("/quizz/remove{id}")
+//    public ResponseEntity<?> removeParticipant(@RequestParam String id) {
+//        if (participantServices.removeParticipantsById(id) != null) {
+//            return ResponseEntity.ok().build();
+//        }
+//        return  ResponseEntity.badRequest().build();
+//    }
 }

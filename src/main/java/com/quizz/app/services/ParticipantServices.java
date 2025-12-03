@@ -5,9 +5,7 @@ import com.quizz.app.errors.ForbiddenException;
 import com.quizz.app.errors.ResourceNotFound;
 import com.quizz.app.models.*;
 import com.quizz.app.repositorie.ParticipantRepository;
-import com.quizz.app.repositorie.QuestionAndAnswerRepository;
 import com.quizz.app.repositorie.QuizzRepository;
-import com.quizz.app.repositorie.QuizzResultRepository;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,24 +18,24 @@ public class ParticipantServices {
     @Autowired
     QuizzRepository quizzRepository;
     @Autowired
-    ParticipantRepository participantRepository;;
-    @Autowired
-    QuizzResultRepository quizzResultRepository;
-    @Autowired
-    QuestionAndAnswerRepository questionAndAnswerRepository;
+    ParticipantRepository participantRepository;
 
     public QuizzStartedInfoDTO startQuizz(ParticipantBasicInfoDTO participantBasicInfoDTO) {
-        Quizz quizz = quizzRepository.findBySlug(participantBasicInfoDTO.getQuizzSlug());
-        if (quizz == null || !quizz.isStatus()) {
+        Quizz quizz = quizzRepository.findBySlug(participantBasicInfoDTO.getQuizzSlug())
+                .orElseThrow(() -> new ResourceNotFound("Não foi possível encontrar o quizz"));
+        if (!quizz.isStatus()) {
             throw new ResourceNotFound("Quizz not found or not available");
         }
+
+        if (quizz.getParticipants().isEmpty()) {
+            throw new ResourceNotFound("Não foi encontrado nenhum participante no quizz");
+        }
+
         if (!quizz.getAllowDuplicateEmailOnQuizz()) {
-            quizz.getParticipants().stream()
-                    .filter(p -> p.getEmail().equals(participantBasicInfoDTO.getEmail()))
-                    .findFirst()
-                    .ifPresent(p -> {
-                        throw new ForbiddenException("Participant already exists");
-                    });
+            if (quizz.getParticipants().stream()
+                    .anyMatch(p -> p.getEmail().equals(participantBasicInfoDTO.getEmail()))) {
+                throw new ForbiddenException("Participant already exists");
+            }
         }
 
         Participant participant = participantRepository.save(Participant.builder()
@@ -63,7 +61,7 @@ public class ParticipantServices {
                         .build())
                 .toList();
 
-        QuizzStartedInfoDTO finalQuizz = QuizzStartedInfoDTO.builder()
+        return QuizzStartedInfoDTO.builder()
                 .id(quizz.getId())
                 .participantId(participant.getId())
                 .title(quizz.getTitle())
@@ -74,16 +72,16 @@ public class ParticipantServices {
                 .maxScore(quizz.getMaxScore())
                 .questions(questionDTOs)
                 .build();
-        return finalQuizz;
     }
 
     public void saveAnswers(QuizzCompletionDTO quizCompletionDTO) {
-        Quizz quizz = quizzRepository.findBySlug(quizCompletionDTO.getQuizzSlug());
+        Quizz quizz = quizzRepository.findBySlug(quizCompletionDTO.getQuizzSlug())
+                .orElseThrow(() -> new ResourceNotFound("Não foi possível encontrar o quizz"));
         Participant participant = participantRepository.findById(quizCompletionDTO.getParticipantId())
-                .orElseThrow(() -> new ResourceNotFound("Participant not found"));
+                .orElseThrow(() -> new ResourceNotFound("Não foi possível encontrar o participante"));
 
-        if (quizz == null || !quizz.isStatus()) {
-            throw new ResourceNotFound("Quizz not found or not available");
+        if (!quizz.isStatus()) {
+            throw new ForbiddenException("O Quizz não está disponível no momento");
         }
 
         if (!quizz.getParticipants().contains(participant)) {
@@ -117,12 +115,9 @@ public class ParticipantServices {
         }
 
         quizzResult.setQuestionsAndAnswers(questionAndAnswerList);
-
-        QuizzResult savedResult = quizzResultRepository.save(quizzResult);
     }
 
-
-    private double calculateScore(@NotNull List<ParticipantAnswerDTO> answers, List<Question> questions, double maxScore) {
+     double calculateScore(@NotNull List<ParticipantAnswerDTO> answers, List<Question> questions, double maxScore) {
         double score = 0;
         for (ParticipantAnswerDTO answer : answers) {
             for (Question question : questions) {
@@ -134,9 +129,5 @@ public class ParticipantServices {
             }
         }
         return score;
-    }
-
-    public Participant removeParticipantsById(String id) {
-        return participantRepository.removeById(id);
     }
 }

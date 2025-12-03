@@ -6,7 +6,6 @@ import com.quizz.app.dto.LoginResponseDTO;
 import com.quizz.app.dto.UserBasicInfoDTO;
 import com.quizz.app.dto.UserRegisterDTO;
 import com.quizz.app.models.User;
-import com.quizz.app.services.GeminiApi;
 import com.quizz.app.services.auth.AuthServices;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +29,6 @@ public class AuthControllers {
 
     @Autowired
     TokenService tokenService;
-
-    @Autowired
-    GeminiApi geminiApi;
 
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@Valid @RequestBody UserRegisterDTO userRegisterDTO) {

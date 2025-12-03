@@ -31,8 +31,4 @@ public class AuthServices {
 
         return userRepository.save(userEntity);
     }
-
-    public List<User> findAll() {
-        return userRepository.findAll();
-    }
 }
