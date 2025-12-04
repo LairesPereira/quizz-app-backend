@@ -16,3 +16,12 @@
 2025-12-04 08:31:07 WARN  [http-nio-0.0.0.0-8080-exec-1] user= - Quizz 3V1VYYY7CTUCLLWV5d não encontrado para o usuário asdasd
 2025-12-04 08:36:19 INFO  [http-nio-0.0.0.0-8080-exec-7] user= - User teste solicitou para iniciar o quizz QFJHN8QW17SC8AKU7
 2025-12-04 08:36:22 ERROR [http-nio-0.0.0.0-8080-exec-7] user= - Não foi encontrado nenhum participante no quizz teste, QFJHN8QW17SC8AKU7
+2025-12-04 08:40:23 INFO  [restartedMain] user= - Starting AppApplication using Java 17.0.17 with PID 96954 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-04 08:40:23 INFO  [restartedMain] user= - No active profile set, falling back to 1 default profile: "default"
+2025-12-04 08:40:31 INFO  [restartedMain] user= - Started AppApplication in 8.403 seconds (process running for 8.695)
+2025-12-04 08:40:44 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - User teste solicitou para iniciar o quizz KQYU1OMNV11PEJ7NI
+2025-12-04 08:40:48 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Cadastrando participante teste no quizz KQYU1OMNV11PEJ7NI
+2025-12-04 08:40:49 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Quizz KQYU1OMNV11PEJ7NI iniciado para o participante teste
+2025-12-04 08:43:19 INFO  [restartedMain] user= - Starting AppApplication using Java 17.0.17 with PID 97414 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-04 08:43:19 INFO  [restartedMain] user= - No active profile set, falling back to 1 default profile: "default"
+2025-12-04 08:43:27 INFO  [restartedMain] user= - Started AppApplication in 8.489 seconds (process running for 8.786)
