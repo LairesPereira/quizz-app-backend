@@ -11,6 +11,8 @@ import com.quizz.app.repositorie.QuestionAndAnswerRepository;
 import com.quizz.app.repositorie.QuizzRepository;
 import com.quizz.app.repositorie.QuizzResultRepository;
 import jakarta.transaction.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -24,6 +26,8 @@ import java.util.stream.Collectors;
 @Service
 public class QuizzServices {
 
+    private final static Logger log = LoggerFactory.getLogger(QuizzServices.class);
+
     @Autowired
     QuizzRepository quizzRepository;
     @Autowired
@@ -36,6 +40,8 @@ public class QuizzServices {
     @Transactional
     public Quizz save(CreateQuizzDTO createQuizzDTO) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        log.info("[SAVE] Salvando quizz: {}", createQuizzDTO);
 
         Quizz quizz = Quizz.builder()
                 .user(user)
@@ -103,10 +109,12 @@ public class QuizzServices {
 
     public boolean toggleStatus(String slug) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        log.info("[TOGGLE_STATUS] Togglando status do quizz: {}", slug);
         Quizz quizz = quizzRepository.findBySlug(slug)
                 .orElseThrow(() -> new ResourceNotFound("Quizz not found"));
 
         if (!quizz.getUser().getId().equals(user.getId())) {
+            log.warn("[TOGGLE_STATUS] Usuário não autorizado para toggle o status do quizz: {}", slug);
             throw new ForbiddenException("You are not allowed to toggle this status");
         }
         quizz.setStatus(!quizz.isStatus());
@@ -116,6 +124,7 @@ public class QuizzServices {
 
     public List<QuizzBasicInfoDTO> findAll() {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        log.info("[FIND_ALL] Buscando todos os quizzes do usuário: {}", user.getId());
         List<Quizz> quizzes = quizzRepository.findAllByUserId(user.getId());
         return quizzes.stream().map(quizz -> QuizzBasicInfoDTO.builder()
                 .title(quizz.getTitle())
@@ -134,10 +143,13 @@ public class QuizzServices {
 
     public List<ParticipantQuizzInfo> getParticipantsBasicInfoByQuizzSlug(String slug) {
         Quizz quizz = quizzRepository.findBySlug(slug)
-                .orElseThrow(() -> new ResourceNotFound("Quizz not found"));
+                .orElseThrow(() -> {
+                    log.error("[GET_PARTICIPANTS_BASIC_INFO] Quizz not found {}", slug);
+                    return new ResourceNotFound("Quizz not found");
+                });
 
         List<Participant> quizzParticipants = quizz.getParticipants();
-        List<ParticipantQuizzInfo> participantQuizzInfoList = quizz.getParticipants().stream()
+        return quizz.getParticipants().stream()
                 .map(participant -> ParticipantQuizzInfo.builder()
                         .id(participant.getId())
                         .name(participant.getName())
@@ -146,8 +158,6 @@ public class QuizzServices {
                         .maxScore(quizz.getMaxScore())
                         .build())
                 .collect(Collectors.toList());
-        System.err.println(quizzParticipants.size());
-        return participantQuizzInfoList;
     }
 
     public Quizz findBySlug(String slug) {
@@ -156,10 +166,15 @@ public class QuizzServices {
     }
 
     public double getParticipantScoreByQuizzSlug(String quizzId, String participantId) {
+        log.info("[GET_PARTICIPANT_SCORE] Buscando score do participante: {}", participantId);
         QuizzResult quizzResult = quizzResultRepository.findByParticipantIdAndQuizzId(participantId, quizzId)
-                        .orElseThrow(() -> new ResourceNotFound("Não foi possível encontrar o score para o participante: " + participantId));
+                        .orElseThrow(() -> {
+                            log.error("[GET_PARTICIPANT_SCORE] Não foi possível encontrar o score para o participante: {}", participantId);
+                            return new ResourceNotFound("Não foi possível encontrar o score para o participante: " + participantId);
+                        });
 
         if (quizzResult.getScore() == null) {
+            log.error("[GET_PARTICIPANT_SCORE] Não foi possível encontrar o score para o participante: {}", participantId);
             throw new ResourceNotFound("Não foi possível encontrar o score para o participante: " + participantId);
         }
 
@@ -167,8 +182,12 @@ public class QuizzServices {
     }
 
     public double getMaxScoreBySlug(String slug) {
+        log.info("[GET_MAX_SCORE] Buscando max score do quizz: {}", slug);
         Quizz quizz = quizzRepository.findBySlug(slug)
-                .orElseThrow(() -> new ResourceNotFound("Quizz not found"));
+                .orElseThrow(() -> {
+                    log.error("[GET_MAX_SCORE] Quizz not found {}", slug);
+                    return new ResourceNotFound("Quizz not found");
+                });
         return quizz.getMaxScore();
     }
 
@@ -202,16 +221,6 @@ public class QuizzServices {
                 .questions(questionDTOs)
                 .build();
     }
-
-//    @Transactional
-//    public void deleteBySlug(String slug) {
-//        Quizz quizz = quizzRepository.findBySlug(slug)
-//                .orElseThrow(() -> new ResourceNotFound("Quizz not found"));
-//
-//        quizz.getParticipants().clear();
-//        quizzResultRepository.deleteAllByQuizzId(quizz.getId());
-//        quizzRepository.delete(quizz);
-//    }
 
     public StatisctsResopnseDTO getStatistics() {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
