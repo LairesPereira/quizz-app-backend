@@ -73,6 +73,7 @@ public class AuthControllers {
     @GetMapping("/me")
     public ResponseEntity<UserBasicInfoDTO> me() {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
         UserBasicInfoDTO userBasicInfoDTO = UserBasicInfoDTO.builder()
                 .firstName(user.getFirstName())
                 .lastName(user.getLastName())
