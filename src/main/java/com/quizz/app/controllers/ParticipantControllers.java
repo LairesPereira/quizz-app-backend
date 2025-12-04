@@ -6,6 +6,8 @@ import com.quizz.app.dto.ParticipantBasicInfoDTO;
 import com.quizz.app.services.ParticipantServices;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,16 +17,18 @@ import java.util.Map;
 @RestController
 @RequestMapping("/participant")
 public class ParticipantControllers {
+
+    private static final Logger log = LoggerFactory.getLogger(ParticipantControllers.class);
+
     @Autowired
     ParticipantServices participantServices;
 
     @PostMapping("/quizz")
     public ResponseEntity<?> startQuizz(@RequestBody @Valid ParticipantBasicInfoDTO participantBasicInfoDTO) {
-        QuizzStartedInfoDTO quizzStartedInfoDTO = participantServices.startQuizz(participantBasicInfoDTO);
-        if (quizzStartedInfoDTO != null) {
-            return ResponseEntity.ok(quizzStartedInfoDTO);
-        }
-        return  ResponseEntity.badRequest().build();
+        log.info("User {} solicitou para iniciar o quizz {}", participantBasicInfoDTO.getEmail(), participantBasicInfoDTO.getQuizzSlug());
+        var response = participantServices.startQuizz(participantBasicInfoDTO);
+        log.info("Quizz {} iniciado para o participante {}", participantBasicInfoDTO.getQuizzSlug(), participantBasicInfoDTO.getEmail());
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping("/quizz/submit")

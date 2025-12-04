@@ -7,6 +7,8 @@ import com.quizz.app.models.*;
 import com.quizz.app.repositorie.ParticipantRepository;
 import com.quizz.app.repositorie.QuizzRepository;
 import jakarta.validation.constraints.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,9 @@ import java.util.List;
 
 @Service
 public class ParticipantServices {
+
+    private static final Logger log = LoggerFactory.getLogger(ParticipantServices.class);
+
     @Autowired
     QuizzRepository quizzRepository;
     @Autowired
@@ -22,22 +27,30 @@ public class ParticipantServices {
 
     public QuizzStartedInfoDTO startQuizz(ParticipantBasicInfoDTO participantBasicInfoDTO) {
         Quizz quizz = quizzRepository.findBySlug(participantBasicInfoDTO.getQuizzSlug())
-                .orElseThrow(() -> new ResourceNotFound("Não foi possível encontrar o quizz"));
+                .orElseThrow(() -> {
+                    log.warn("Quizz {} não encontrado para o usuário {}", participantBasicInfoDTO.getQuizzSlug(), participantBasicInfoDTO.getEmail());
+                    return new ResourceNotFound("Quizz '" + participantBasicInfoDTO.getQuizzSlug() + "' não encontrado");
+                });
+
         if (!quizz.isStatus()) {
-            throw new ResourceNotFound("Quizz not found or not available");
+            log.warn("Quizz {} não está disponível para {}", participantBasicInfoDTO.getQuizzSlug(), participantBasicInfoDTO.getEmail());
+            throw new ForbiddenException("O Quizz não está disponível");
         }
 
         if (quizz.getParticipants().isEmpty()) {
+            log.warn("Não foi encontrado nenhum participante no quizz {}, {}", participantBasicInfoDTO.getEmail(), participantBasicInfoDTO.getQuizzSlug());
             throw new ResourceNotFound("Não foi encontrado nenhum participante no quizz");
         }
 
         if (!quizz.getAllowDuplicateEmailOnQuizz()) {
             if (quizz.getParticipants().stream()
                     .anyMatch(p -> p.getEmail().equals(participantBasicInfoDTO.getEmail()))) {
-                throw new ForbiddenException("Participant already exists");
+                log.warn("Participante já cadastrado no quizz {}, {}", participantBasicInfoDTO.getEmail(), participantBasicInfoDTO.getQuizzSlug());
+                throw new ForbiddenException("Participante já cadastrado no quizz");
             }
         }
 
+        log.info("Cadastrando participante {} no quizz {}", participantBasicInfoDTO.getEmail(), participantBasicInfoDTO.getQuizzSlug());
         Participant participant = participantRepository.save(Participant.builder()
                 .name(participantBasicInfoDTO.getName())
                 .email(participantBasicInfoDTO.getEmail())
@@ -49,17 +62,7 @@ public class ParticipantServices {
         quizz.getParticipants().add(participant);
         quizzRepository.save(quizz);
 
-        List<QuestionDTO> questionDTOs = quizz.getQuestions().stream()
-                .map(q -> QuestionDTO.builder()
-                        .id(q.getId())
-                        .content(q.getContent())
-                        .answers(q.getAnswers().stream()
-                                .map(a -> AnswerDTO.builder()
-                                        .content(a.getAnswer())
-                                        .build())
-                                .toList())
-                        .build())
-                .toList();
+        List<QuestionDTO> questionDTOs = mapQuestionToDTO(quizz);
 
         return QuizzStartedInfoDTO.builder()
                 .id(quizz.getId())
@@ -72,6 +75,21 @@ public class ParticipantServices {
                 .maxScore(quizz.getMaxScore())
                 .questions(questionDTOs)
                 .build();
+    }
+
+    private static List<QuestionDTO> mapQuestionToDTO(Quizz quizz) {
+        List<QuestionDTO> questionDTOs = quizz.getQuestions().stream()
+                .map(q -> QuestionDTO.builder()
+                        .id(q.getId())
+                        .content(q.getContent())
+                        .answers(q.getAnswers().stream()
+                                .map(a -> AnswerDTO.builder()
+                                        .content(a.getAnswer())
+                                        .build())
+                                .toList())
+                        .build())
+                .toList();
+        return questionDTOs;
     }
 
     public void saveAnswers(QuizzCompletionDTO quizCompletionDTO) {
