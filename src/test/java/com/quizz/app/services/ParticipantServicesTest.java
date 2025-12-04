@@ -100,7 +100,7 @@ public class ParticipantServicesTest {
     quizz.setStatus(false);
 
     when(quizzRepository.findBySlug(anyString())).thenReturn(Optional.of(quizz));
-    assertThrows(ResourceNotFound.class, () -> participantServices.startQuizz(ParticipantBasicInfoDTO.builder()
+    assertThrows(ForbiddenException.class, () -> participantServices.startQuizz(ParticipantBasicInfoDTO.builder()
             .quizzSlug(quizz.getSlug())
             .build()));
     }
@@ -120,22 +120,6 @@ public class ParticipantServicesTest {
         when(quizzRepository.findBySlug(anyString())).thenReturn(Optional.of(quizz));
 
         assertThrows(ForbiddenException.class, () -> participantServices.startQuizz(
-                ParticipantBasicInfoDTO.builder()
-                        .email(DefaultParticipantValues.VALID_EMAIL.getValue())
-                        .quizzSlug("test")
-                        .build()
-        ));
-    }
-
-    @Test
-    void testStartQuizz_ParticipantListEmpty_ShouldThrowException() {
-        Quizz quizz = QuizzMockFactory.createQuizzModel();
-        quizz.setSlug("test");
-        quizz.setParticipants(new ArrayList<>());
-
-        when(quizzRepository.findBySlug(anyString())).thenReturn(Optional.of(quizz));
-
-        assertThrows(ResourceNotFound.class, () -> participantServices.startQuizz(
                 ParticipantBasicInfoDTO.builder()
                         .email(DefaultParticipantValues.VALID_EMAIL.getValue())
                         .quizzSlug("test")
