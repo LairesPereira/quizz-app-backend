@@ -4,6 +4,8 @@ import com.google.genai.Client;
 import com.google.genai.types.GenerateContentResponse;
 import com.quizz.app.dto.AlternativesWithAiDTO;
 import lombok.Generated;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,8 @@ import java.util.List;
 public class GeminiServices {
     private final int DEFAULT_INCORRECT_ALTERNATIVES = 3;
     private final int DEFAULT_CORRECT_ALTERNATIVES = 1;
+
+    private static final Logger log = LoggerFactory.getLogger(GeminiServices.class);
 
     @Value("${gemini.api.key}")
     private String apiKey;
@@ -72,17 +76,20 @@ public class GeminiServices {
             Collections.shuffle(alternativesWithAiDTOList);
             return alternativesWithAiDTOList;
         } catch (Exception e){
+            log.error("[GENERATE_ALTERNATIVES] Erro ao gerar alternativas para a pergunta: {}", questionText, e);
             throw new RuntimeException(e);
         }
     }
 
     public AlternativesWithAiDTO generateSingleAlternativesWithAi(String questionText) {
         try {
+            log.info("[GENERATE_SINGLE_ALTERNATIVE] Gerando alternativa para a pergunta: {}", questionText);
             return AlternativesWithAiDTO.builder()
                     .content(sendPrompt(questionText, "incorreta"))
                     .isCorrect(false)
                     .build();
         } catch (Exception e){
+            log.error("[GENERATE_SINGLE_ALTERNATIVE] Erro ao gerar alternativa para a pergunta: {}", questionText, e);
             throw new RuntimeException(e);
         }
     }
