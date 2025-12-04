@@ -8,6 +8,8 @@ import com.quizz.app.services.QuizzServices;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +20,8 @@ import java.util.Map;
 @RequestMapping("/quizz")
 @SecurityRequirement(name = "bearerAuth")
 public class QuizzControllers {
+
+    private final static Logger log = LoggerFactory.getLogger(QuizzControllers.class);
 
     @Autowired
     QuizzServices quizzServices;
@@ -31,7 +35,7 @@ public class QuizzControllers {
         return ResponseEntity.badRequest().build();
     }
 
-    @PatchMapping("/status")
+    @PatchMapping("/toggle-status")
     public ResponseEntity<?> toggleQuizzStatus(@RequestParam String slug) {
         if (quizzServices.toggleStatus(slug)) {
             return ResponseEntity.ok().build();
