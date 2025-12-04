@@ -28,12 +28,12 @@ public class ParticipantServices {
     public QuizzStartedInfoDTO startQuizz(ParticipantBasicInfoDTO participantBasicInfoDTO) {
         Quizz quizz = quizzRepository.findBySlug(participantBasicInfoDTO.getQuizzSlug())
                 .orElseThrow(() -> {
-                    log.warn("Quizz {} não encontrado para o usuário {}", participantBasicInfoDTO.getQuizzSlug(), participantBasicInfoDTO.getEmail());
+                    log.warn("[START_QUIZZ] Quizz {} não encontrado para o usuário {}", participantBasicInfoDTO.getQuizzSlug(), participantBasicInfoDTO.getEmail());
                     return new ResourceNotFound("Quizz '" + participantBasicInfoDTO.getQuizzSlug() + "' não encontrado");
                 });
 
         if (!quizz.isStatus()) {
-            log.warn("Quizz {} não está disponível para {}", participantBasicInfoDTO.getQuizzSlug(), participantBasicInfoDTO.getEmail());
+            log.warn("[START_QUIZZ] Quizz {} não está disponível para {}", participantBasicInfoDTO.getQuizzSlug(), participantBasicInfoDTO.getEmail());
             throw new ForbiddenException("O Quizz não está disponível");
         }
 
@@ -41,7 +41,7 @@ public class ParticipantServices {
             if (quizz.getParticipants().stream()
                     .anyMatch(p -> p.getEmail().equals(participantBasicInfoDTO.getEmail()))) {
 
-                log.warn("Participante já cadastrado no quizz {} para o usuário {}",
+                log.warn("[START_QUIZZ] Participante já cadastrado no quizz {} para o usuário {}",
                         participantBasicInfoDTO.getQuizzSlug(),
                         participantBasicInfoDTO.getEmail()
                 );
@@ -50,7 +50,7 @@ public class ParticipantServices {
             }
         }
 
-        log.info("Cadastrando participante {} no quizz {}", participantBasicInfoDTO.getEmail(), participantBasicInfoDTO.getQuizzSlug());
+        log.info("[START_QUIZZ] Cadastrando participante {} no quizz {}", participantBasicInfoDTO.getEmail(), participantBasicInfoDTO.getQuizzSlug());
         Participant participant = participantRepository.save(Participant.builder()
                 .name(participantBasicInfoDTO.getName())
                 .email(participantBasicInfoDTO.getEmail())
@@ -92,7 +92,7 @@ public class ParticipantServices {
     }
 
     public void saveAnswers(QuizzCompletionDTO quizCompletionDTO) {
-        log.info("Salvando respostas do quizz {} para o participante {}", quizCompletionDTO.getQuizzSlug(), quizCompletionDTO.getParticipantId());
+        log.info("[SAVE_ANSWERS] Salvando respostas do quizz {} para o participante {}", quizCompletionDTO.getQuizzSlug(), quizCompletionDTO.getParticipantId());
 
         Quizz quizz = quizzRepository.findBySlug(quizCompletionDTO.getQuizzSlug())
                 .orElseThrow(() -> {
@@ -102,18 +102,18 @@ public class ParticipantServices {
 
         Participant participant = participantRepository.findById(quizCompletionDTO.getParticipantId())
                 .orElseThrow(() -> {
-                        log.warn("Participante {} não encontrado ao tentar finalizar", quizCompletionDTO.getParticipantId());
+                        log.warn("[SAVE_ANSWERS] Participante {} não encontrado ao tentar finalizar", quizCompletionDTO.getParticipantId());
                         return new ResourceNotFound("Não foi possível encontrar o participante");
                     }
                 );
 
         if (!quizz.isStatus()) {
-            log.warn("Quizz {} não está disponível ao tentar finalizar", quizCompletionDTO.getQuizzSlug());
+            log.warn("[SAVE_ANSWERS] Quizz {} não está disponível ao tentar finalizar", quizCompletionDTO.getQuizzSlug());
             throw new ForbiddenException("O Quizz não está disponível no momento");
         }
 
         if (!quizz.getParticipants().contains(participant)) {
-            log.warn("Participante {} não encontrado no quizz {} ao tentar finalizar", quizCompletionDTO.getParticipantId(), quizCompletionDTO.getQuizzSlug());
+            log.warn("[SAVE_ANSWERS] Participante {} não encontrado no quizz {} ao tentar finalizar", quizCompletionDTO.getParticipantId(), quizCompletionDTO.getQuizzSlug());
             throw new ResourceNotFound("Participant not found in this quizz");
         }
 
@@ -127,12 +127,12 @@ public class ParticipantServices {
 
         List<QuestionAndAnswer> questionAndAnswerList = new ArrayList<>();
 
-        MapQuestionAndAnswers(quizCompletionDTO, quizz, quizzResult, questionAndAnswerList);
+        populateQuestionAndAnswers(quizCompletionDTO, quizz, quizzResult, questionAndAnswerList);
 
         quizzResult.setQuestionsAndAnswers(questionAndAnswerList);
     }
 
-    private static void MapQuestionAndAnswers(QuizzCompletionDTO quizCompletionDTO, Quizz quizz, QuizzResult quizzResult, List<QuestionAndAnswer> questionAndAnswerList) {
+    private static void populateQuestionAndAnswers(QuizzCompletionDTO quizCompletionDTO, Quizz quizz, QuizzResult quizzResult, List<QuestionAndAnswer> questionAndAnswerList) {
         for (ParticipantAnswerDTO participantAnswer : quizCompletionDTO.getAnswers()) {
             Question question = quizz.getQuestions().stream()
                     .filter(q -> q.getId().equals(participantAnswer.getQuestionId()))
