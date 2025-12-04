@@ -92,16 +92,28 @@ public class ParticipantServices {
     }
 
     public void saveAnswers(QuizzCompletionDTO quizCompletionDTO) {
+        log.info("Salvando respostas do quizz {} para o participante {}", quizCompletionDTO.getQuizzSlug(), quizCompletionDTO.getParticipantId());
+
         Quizz quizz = quizzRepository.findBySlug(quizCompletionDTO.getQuizzSlug())
-                .orElseThrow(() -> new ResourceNotFound("Não foi possível encontrar o quizz"));
+                .orElseThrow(() -> {
+                    log.warn("Quizz {} não encontrado ao tentar finalizar", quizCompletionDTO.getQuizzSlug());
+                    return new ResourceNotFound("Não foi possível encontrar o quizz");
+                });
+
         Participant participant = participantRepository.findById(quizCompletionDTO.getParticipantId())
-                .orElseThrow(() -> new ResourceNotFound("Não foi possível encontrar o participante"));
+                .orElseThrow(() -> {
+                        log.warn("Participante {} não encontrado ao tentar finalizar", quizCompletionDTO.getParticipantId());
+                        return new ResourceNotFound("Não foi possível encontrar o participante");
+                    }
+                );
 
         if (!quizz.isStatus()) {
+            log.warn("Quizz {} não está disponível ao tentar finalizar", quizCompletionDTO.getQuizzSlug());
             throw new ForbiddenException("O Quizz não está disponível no momento");
         }
 
         if (!quizz.getParticipants().contains(participant)) {
+            log.warn("Participante {} não encontrado no quizz {} ao tentar finalizar", quizCompletionDTO.getParticipantId(), quizCompletionDTO.getQuizzSlug());
             throw new ResourceNotFound("Participant not found in this quizz");
         }
 
@@ -115,6 +127,12 @@ public class ParticipantServices {
 
         List<QuestionAndAnswer> questionAndAnswerList = new ArrayList<>();
 
+        MapQuestionAndAnswers(quizCompletionDTO, quizz, quizzResult, questionAndAnswerList);
+
+        quizzResult.setQuestionsAndAnswers(questionAndAnswerList);
+    }
+
+    private static void MapQuestionAndAnswers(QuizzCompletionDTO quizCompletionDTO, Quizz quizz, QuizzResult quizzResult, List<QuestionAndAnswer> questionAndAnswerList) {
         for (ParticipantAnswerDTO participantAnswer : quizCompletionDTO.getAnswers()) {
             Question question = quizz.getQuestions().stream()
                     .filter(q -> q.getId().equals(participantAnswer.getQuestionId()))
@@ -130,11 +148,9 @@ public class ParticipantServices {
 
             questionAndAnswerList.add(qa);
         }
-
-        quizzResult.setQuestionsAndAnswers(questionAndAnswerList);
     }
 
-     double calculateScore(@NotNull List<ParticipantAnswerDTO> answers, List<Question> questions, double maxScore) {
+    double calculateScore(@NotNull List<ParticipantAnswerDTO> answers, List<Question> questions, double maxScore) {
         double score = 0;
         for (ParticipantAnswerDTO answer : answers) {
             for (Question question : questions) {
