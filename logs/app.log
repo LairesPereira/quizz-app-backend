@@ -34,3 +34,9 @@
 2025-12-04 08:47:42 INFO  [restartedMain] user= - Starting AppApplication using Java 17.0.17 with PID 97414 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
 2025-12-04 08:47:42 INFO  [restartedMain] user= - No active profile set, falling back to 1 default profile: "default"
 2025-12-04 08:47:48 INFO  [restartedMain] user= - Started AppApplication in 6.17 seconds (process running for 270.0)
+2025-12-04 15:01:58 INFO  [restartedMain] user= - Starting AppApplication using Java 17.0.17 with PID 20156 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-04 15:01:58 INFO  [restartedMain] user= - No active profile set, falling back to 1 default profile: "default"
+2025-12-04 15:02:05 INFO  [restartedMain] user= - Started AppApplication in 6.569 seconds (process running for 237.8)
+2025-12-04 15:02:07 INFO  [restartedMain] user= - Starting AppApplication using Java 17.0.17 with PID 20156 (/Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend/target/classes started by lairespereira in /Users/lairespereira/Documents/Faculdade/P5/Klelver/quizz-app-backend)
+2025-12-04 15:02:07 INFO  [restartedMain] user= - No active profile set, falling back to 1 default profile: "default"
+2025-12-04 15:02:13 INFO  [restartedMain] user= - Started AppApplication in 6.232 seconds (process running for 246.561)
