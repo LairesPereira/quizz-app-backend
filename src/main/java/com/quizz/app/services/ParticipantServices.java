@@ -40,7 +40,12 @@ public class ParticipantServices {
         if (!quizz.getAllowDuplicateEmailOnQuizz()) {
             if (quizz.getParticipants().stream()
                     .anyMatch(p -> p.getEmail().equals(participantBasicInfoDTO.getEmail()))) {
-                log.warn("Participante já cadastrado no quizz {}, {}", participantBasicInfoDTO.getEmail(), participantBasicInfoDTO.getQuizzSlug());
+
+                log.warn("Participante já cadastrado no quizz {} para o usuário {}",
+                        participantBasicInfoDTO.getQuizzSlug(),
+                        participantBasicInfoDTO.getEmail()
+                );
+
                 throw new ForbiddenException("Participante já cadastrado no quizz");
             }
         }
@@ -73,7 +78,7 @@ public class ParticipantServices {
     }
 
     private static List<QuestionDTO> mapQuestionToDTO(Quizz quizz) {
-        List<QuestionDTO> questionDTOs = quizz.getQuestions().stream()
+        return quizz.getQuestions().stream()
                 .map(q -> QuestionDTO.builder()
                         .id(q.getId())
                         .content(q.getContent())
@@ -84,7 +89,6 @@ public class ParticipantServices {
                                 .toList())
                         .build())
                 .toList();
-        return questionDTOs;
     }
 
     public void saveAnswers(QuizzCompletionDTO quizCompletionDTO) {
