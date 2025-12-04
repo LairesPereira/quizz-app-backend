@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -20,18 +21,25 @@ public class GeminiServices {
     private final int DEFAULT_CORRECT_ALTERNATIVES = 1;
 
     private static final Logger log = LoggerFactory.getLogger(GeminiServices.class);
+    private final static String MODEL = "gemini-2.0-flash";
+    private Client client;
 
     @Value("${gemini.api.key}")
     private String apiKey;
 
-    public String sendPrompt(String text, String type) {
-        Client client = Client.builder()
-                .apiKey(apiKey)
-                .build();
+    @PostConstruct
+    private void initClient() {
+        if (client == null) {
+            client = Client.builder()
+                    .apiKey(apiKey)
+                    .build();
+        }
+    }
 
+    public String sendPrompt(String text, String type) {
         GenerateContentResponse response =
                 client.models.generateContent(
-                        "gemini-2.0-flash",
+                        MODEL,
                         "Gere uma afirmação " + type + " para a seguinte pergunta:\n" +
                                 "\"" + text + "\"\n\n" +
                                 "Regras IMPORTANTES:\n" +
