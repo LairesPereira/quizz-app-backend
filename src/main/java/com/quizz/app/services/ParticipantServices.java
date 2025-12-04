@@ -37,11 +37,6 @@ public class ParticipantServices {
             throw new ForbiddenException("O Quizz não está disponível");
         }
 
-        if (quizz.getParticipants().isEmpty()) {
-            log.warn("Não foi encontrado nenhum participante no quizz {}, {}", participantBasicInfoDTO.getEmail(), participantBasicInfoDTO.getQuizzSlug());
-            throw new ResourceNotFound("Não foi encontrado nenhum participante no quizz");
-        }
-
         if (!quizz.getAllowDuplicateEmailOnQuizz()) {
             if (quizz.getParticipants().stream()
                     .anyMatch(p -> p.getEmail().equals(participantBasicInfoDTO.getEmail()))) {
