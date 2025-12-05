@@ -273,3 +273,9 @@ com.google.genai.errors.ClientException: 400 Bad Request. API key expired. Pleas
 2025-12-05 14:48:53 INFO  [restartedMain] user= - Started AppApplication in 8.159 seconds (process running for 8.384)
 2025-12-05 14:49:05 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Initializing Servlet 'dispatcherServlet'
 2025-12-05 14:49:05 INFO  [http-nio-0.0.0.0-8080-exec-1] user= - Completed initialization in 9 ms
+2025-12-05 14:50:47 INFO  [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - [FIND_ALL] Buscando todos os quizzes do usuário: 8dac61af-f84d-40cf-9557-8ae50a51df92
+2025-12-05 14:50:55 INFO  [http-nio-0.0.0.0-8080-exec-7] user=lairespsoares@gmail.com - [FIND_ALL] Buscando todos os quizzes do usuário: 8dac61af-f84d-40cf-9557-8ae50a51df92
+2025-12-05 14:51:01 INFO  [http-nio-0.0.0.0-8080-exec-10] user=lairespsoares@gmail.com - [GET_PARTICIPANT_SCORE] Buscando score do participante: 0c4e0a4f-8693-4636-ac34-09d683027b73
+2025-12-05 14:51:01 INFO  [http-nio-0.0.0.0-8080-exec-10] user=lairespsoares@gmail.com - [GET_PARTICIPANT_SCORE] Buscando score do participante: a2cb411a-533b-4fff-bcc1-3da401b03b1f
+2025-12-05 14:51:04 INFO  [http-nio-0.0.0.0-8080-exec-4] user=lairespsoares@gmail.com - [GET_MAX_SCORE] Buscando max score do quizz: 46WM80YFHE9B60BZW
+2025-12-05 14:51:11 INFO  [http-nio-0.0.0.0-8080-exec-6] user=lairespsoares@gmail.com - [GET_MAX_SCORE] Buscando max score do quizz: 46WM80YFHE9B60BZW
